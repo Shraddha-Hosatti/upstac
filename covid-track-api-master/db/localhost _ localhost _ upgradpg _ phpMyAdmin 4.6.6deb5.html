@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<!-- saved from url=(0111)http://localhost/phpmyadmin/db_designer.php?server=1&db=upgradpg&token=e9058a1070a7b50aac79bd94f80b6d0a&page=-1 -->
+<html lang="en" dir="ltr" class="chrome chrome83"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="referrer" content="no-referrer"><meta name="robots" content="noindex,nofollow"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><link rel="icon" href="http://localhost/phpmyadmin/favicon.ico" type="image/x-icon"><link rel="shortcut icon" href="http://localhost/phpmyadmin/favicon.ico" type="image/x-icon"><link rel="stylesheet" type="text/css" href="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/jquery-ui-1.11.4.css"><link rel="stylesheet" type="text/css" href="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/codemirror.css"><link rel="stylesheet" type="text/css" href="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/show-hint.css"><link rel="stylesheet" type="text/css" href="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/lint.css"><link rel="stylesheet" type="text/css" href="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/phpmyadmin.css.php"><link rel="stylesheet" type="text/css" href="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/printview.css" media="print" id="printcss"><title>localhost / localhost / upgradpg | phpMyAdmin 4.6.6deb5</title><script data-cfasync="false" type="text/javascript" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/whitelist.php"></script><script data-cfasync="false" type="text/javascript" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/get_scripts.js.php"></script><script data-cfasync="false" type="text/javascript" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/get_scripts.js(1).php"></script><script data-cfasync="false" type="text/javascript" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/get_scripts.js(2).php"></script><script data-cfasync="false" type="text/javascript" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/get_scripts.js(3).php"></script><script data-cfasync="false" type="text/javascript" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/messages.php"></script><script data-cfasync="false" type="text/javascript" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/get_image.js.php"></script><script data-cfasync="false" type="text/javascript">// <![CDATA[
+PMA_commonParams.setAll({common_query:"?token=e9058a1070a7b50aac79bd94f80b6d0a",opendb_url:"db_structure.php",safari_browser:"0",collation_connection:"utf8mb4_unicode_ci",lang:"en",server:"1",table:"",db:"",token:"e9058a1070a7b50aac79bd94f80b6d0a",text_dir:"ltr",show_databases_navigation_as_tree:"1",pma_text_default_tab:"Browse",pma_text_left_default_tab:"Structure",pma_text_left_default_tab2:"",LimitChars:"50",pftext:"",confirm:"1",LoginCookieValidity:"1440",logged_in:"1",PMA_VERSION:"4.6.6deb5",auth_type:"cookie"});
+ConsoleEnterExecutes=false
+AJAX.scriptHandler.add("jquery/jquery-2.1.4.min.js",0).add("whitelist.php?lang=en&amp;db=&amp;token=e9058a1070a7b50aac79bd94f80b6d0a",1).add("sprintf.js",1).add("ajax.js",0).add("keyhandler.js",1).add("jquery/jquery-ui-1.11.4.min.js",0).add("jquery/jquery.cookie.js",0).add("jquery/jquery.mousewheel.js",0).add("jquery/jquery.event.drag-2.2.js",0).add("jquery/jquery-ui-timepicker-addon.js",0).add("jquery/jquery.ba-hashchange-1.3.js",0).add("jquery/jquery.debounce-1.0.5.js",0).add("menu-resizer.js",1).add("cross_framing_protection.js",0).add("rte.js",1).add("tracekit/tracekit.js",1).add("error_report.js",1).add("messages.php?lang=en&amp;db=&amp;token=e9058a1070a7b50aac79bd94f80b6d0a",0).add("get_image.js.php?theme=pmahomme",0).add("config.js",1).add("doclinks.js",1).add("functions.js",1).add("navigation.js",1).add("indexes.js",1).add("common.js",1).add("page_settings.js",1).add("codemirror/lib/codemirror.js",0).add("codemirror/mode/sql/sql.js",0).add("codemirror/addon/runmode/runmode.js",0).add("codemirror/addon/hint/show-hint.js",0).add("codemirror/addon/hint/sql-hint.js",0).add("codemirror/addon/lint/lint.js",0).add("codemirror/addon/lint/sql-lint.js",0).add("console.js",1);
+$(function() {AJAX.fireOnload("whitelist.php?lang=en&amp;db=&amp;token=e9058a1070a7b50aac79bd94f80b6d0a");AJAX.fireOnload("sprintf.js");AJAX.fireOnload("keyhandler.js");AJAX.fireOnload("menu-resizer.js");AJAX.fireOnload("rte.js");AJAX.fireOnload("tracekit/tracekit.js");AJAX.fireOnload("error_report.js");AJAX.fireOnload("config.js");AJAX.fireOnload("doclinks.js");AJAX.fireOnload("functions.js");AJAX.fireOnload("navigation.js");AJAX.fireOnload("indexes.js");AJAX.fireOnload("common.js");AJAX.fireOnload("page_settings.js");AJAX.fireOnload("console.js");});
+// ]]></script><noscript><style>html{display:block}</style></noscript><script type="text/javascript" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/get_scripts.js(4).php"></script><script type="text/javascript" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/get_scripts.js(5).php"></script><script type="text/javascript" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/get_scripts.js(6).php"></script><script type="text/javascript" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/get_scripts.js(7).php"></script><script type="text/javascript" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/get_scripts.js(8).php"></script></head><body style="margin-bottom: 18px; padding-top: 58px; cursor: inherit; margin-left: 240px;"><div id="pma_navigation" style="width: 240px;"><div id="pma_navigation_resizer" style="left: 240px;"></div><div id="pma_navigation_collapser" title="Hide panel" style="left: 240px;">←</div><div id="pma_navigation_content"><div id="pma_navigation_header"><a class="hide navigation_url" href="http://localhost/phpmyadmin/navigation.php?ajax_request=1&amp;token=e9058a1070a7b50aac79bd94f80b6d0a"></a><!-- LOGO START -->
+<div id="pmalogo">
+            <a href="http://localhost/phpmyadmin/index.php?token=e9058a1070a7b50aac79bd94f80b6d0a">
+        <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/logo_left.png" alt="phpMyAdmin" id="imgpmalogo">            </a>
+    </div>
+<!-- LOGO END --><!-- LINKS START --><div id="navipanellinks"><a href="http://localhost/phpmyadmin/index.php?token=e9058a1070a7b50aac79bd94f80b6d0a" title="Home"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Home" alt="Home" class="icon ic_b_home"></a><a href="http://localhost/phpmyadmin/logout.php?db=&amp;token=e9058a1070a7b50aac79bd94f80b6d0a" class="disableAjax" title="Log out"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Log out" alt="Log out" class="icon ic_s_loggoff"></a><a href="http://localhost/phpmyadmin/doc/html/index.html" target="documentation" title="phpMyAdmin documentation"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="phpMyAdmin documentation" alt="phpMyAdmin documentation" class="icon ic_b_docs"></a><a href="http://localhost/phpmyadmin/url.php?url=https%3A%2F%2Fdev.mysql.com%2Fdoc%2Frefman%2F5.7%2Fen%2Findex.html" target="mysql_doc" title="Documentation"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Documentation" alt="Documentation" class="icon ic_b_sqlhelp"></a><a href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#" id="pma_navigation_settings_icon" title="Navigation panel settings"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Navigation panel settings" alt="Navigation panel settings" class="icon ic_s_cog"></a><a href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#" id="pma_navigation_reload" title="Reload navigation panel"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Reload navigation panel" alt="Reload navigation panel" class="icon ic_s_reload"></a></div><!-- LINKS ENDS --><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/ajax_clock_small.gif" title="Loading…" alt="Loading…" style="visibility: hidden; display:none" class="throbber"></div><div id="pma_navigation_tree" class="list_container synced highlight" style="height: 889px;"><div class="pma_quick_warp"><div class="drop_list"><span title="Recent tables" class="drop_button">Recent</span><ul id="pma_recent_list"><li class="warp_link"><a href="http://localhost/phpmyadmin/tbl_recent_favorite.php?db=upgradpg&amp;table=user&amp;token=e9058a1070a7b50aac79bd94f80b6d0a">`upgradpg`.`user`</a></li><li class="warp_link"><a href="http://localhost/phpmyadmin/tbl_recent_favorite.php?db=upgradpg&amp;table=user_roles&amp;token=e9058a1070a7b50aac79bd94f80b6d0a">`upgradpg`.`user_roles`</a></li></ul></div><div class="drop_list"><span title="Favorite tables" class="drop_button">Favorites</span><ul id="pma_favorite_list"><li class="warp_link">There are no favorite tables.</li></ul></div><div class="clearfloat"></div></div><div class="clearfloat"></div><ul><!-- CONTROLS START --><li id="navigation_controls_outer" class=""><div id="navigation_controls"><a href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#" id="pma_navigation_collapse" title="Collapse all"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/s_collapseall.png" title="Collapse all" alt="Collapse all"></a><a href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#" id="pma_navigation_sync" title="Unlink from main panel"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Unlink from main panel" alt="Unlink from main panel" class="icon ic_s_link"></a></div></li><!-- CONTROLS ENDS --></ul><div id="pma_navigation_tree_content" style="height: 840px;"><ul><li class="first database"><div class="block"><i class="first"></i><b></b><a class="expander" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#"><span class="hide aPath">cm9vdA==.aW5mb3JtYXRpb25fc2NoZW1h</span><span class="hide vPath">cm9vdA==.aW5mb3JtYXRpb25fc2NoZW1h</span><span class="hide pos">0</span><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Expand/Collapse" alt="Expand/Collapse" class="icon ic_b_plus"></a></div><div class="block "><a href="http://localhost/phpmyadmin/db_operations.php?server=1&amp;db=information_schema&amp;token=e9058a1070a7b50aac79bd94f80b6d0a"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Database operations" alt="Database operations" class="icon ic_s_db"></a></div><a class="hover_show_full" href="http://localhost/phpmyadmin/db_structure.php?server=1&amp;db=information_schema&amp;token=e9058a1070a7b50aac79bd94f80b6d0a" title="Structure">information_schema</a><div class="clearfloat"></div></li><li class="last database selected"><div class="block"><i></i><a class="expander loaded" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#"><span class="hide aPath">cm9vdA==.dXBncmFkcGc=</span><span class="hide vPath">cm9vdA==.dXBncmFkcGc=</span><span class="hide pos">0</span><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Expand/Collapse" alt="Expand/Collapse" class="icon ic_b_minus" style="display: inline;"></a></div><div class="block "><a href="http://localhost/phpmyadmin/db_operations.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Database operations" alt="Database operations" class="icon ic_s_db"></a></div><a class="hover_show_full" href="http://localhost/phpmyadmin/db_structure.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a" title="Structure">upgradpg</a><div class="clearfloat"></div><div class="list_container" style=""><ul><li class="new_table italics"><div class="block"><i></i><span class="hide pos2_name">tables</span><span class="hide pos2_value">0</span></div><div class="block "><a href="http://localhost/phpmyadmin/tbl_create.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="New" alt="New" class="icon ic_b_table_add"></a></div><a class="hover_show_full" href="http://localhost/phpmyadmin/tbl_create.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a" title="">New</a><div class="clearfloat"></div></li><li class="table"><div class="block"><i></i><b></b><a class="expander" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#"><span class="hide aPath">cm9vdA==.dXBncmFkcGc=.dGFibGVz.Y29uc3VsdGF0aW9u</span><span class="hide vPath">cm9vdA==.dXBncmFkcGc=.VGFibGVz.Y29uc3VsdGF0aW9u</span><span class="hide pos">0</span><span class="hide pos2_name">tables</span><span class="hide pos2_value">0</span><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Expand/Collapse" alt="Expand/Collapse" class="icon ic_b_plus"></a></div><div class="block "><a href="http://localhost/phpmyadmin/tbl_structure.php?server=1&amp;db=upgradpg&amp;table=consultation&amp;token=e9058a1070a7b50aac79bd94f80b6d0a"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Structure" alt="Structure" class="icon ic_b_props"></a></div><a class="hover_show_full" href="http://localhost/phpmyadmin/sql.php?server=1&amp;db=upgradpg&amp;table=consultation&amp;pos=0&amp;token=e9058a1070a7b50aac79bd94f80b6d0a" title="Browse">consultation</a><span class="navItemControls"><a href="http://localhost/phpmyadmin/navigation.php?token=e9058a1070a7b50aac79bd94f80b6d0a&amp;hideNavItem=true&amp;itemType=table&amp;itemName=consultation&amp;dbName=upgradpg" class="hideNavItem ajax"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Hide" alt="Hide" class="icon ic_lightbulb_off"></a></span><div class="clearfloat"></div></li><li class="table"><div class="block"><i></i><b></b><a class="expander" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#"><span class="hide aPath">cm9vdA==.dXBncmFkcGc=.dGFibGVz.ZG9jdW1lbnQ=</span><span class="hide vPath">cm9vdA==.dXBncmFkcGc=.VGFibGVz.ZG9jdW1lbnQ=</span><span class="hide pos">0</span><span class="hide pos2_name">tables</span><span class="hide pos2_value">0</span><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Expand/Collapse" alt="Expand/Collapse" class="icon ic_b_plus"></a></div><div class="block "><a href="http://localhost/phpmyadmin/tbl_structure.php?server=1&amp;db=upgradpg&amp;table=document&amp;token=e9058a1070a7b50aac79bd94f80b6d0a"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Structure" alt="Structure" class="icon ic_b_props"></a></div><a class="hover_show_full" href="http://localhost/phpmyadmin/sql.php?server=1&amp;db=upgradpg&amp;table=document&amp;pos=0&amp;token=e9058a1070a7b50aac79bd94f80b6d0a" title="Browse">document</a><span class="navItemControls"><a href="http://localhost/phpmyadmin/navigation.php?token=e9058a1070a7b50aac79bd94f80b6d0a&amp;hideNavItem=true&amp;itemType=table&amp;itemName=document&amp;dbName=upgradpg" class="hideNavItem ajax"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Hide" alt="Hide" class="icon ic_lightbulb_off"></a></span><div class="clearfloat"></div></li><li class="table"><div class="block"><i></i><b></b><a class="expander" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#"><span class="hide aPath">cm9vdA==.dXBncmFkcGc=.dGFibGVz.bGFiX3Jlc3VsdA==</span><span class="hide vPath">cm9vdA==.dXBncmFkcGc=.VGFibGVz.bGFiX3Jlc3VsdA==</span><span class="hide pos">0</span><span class="hide pos2_name">tables</span><span class="hide pos2_value">0</span><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Expand/Collapse" alt="Expand/Collapse" class="icon ic_b_plus"></a></div><div class="block "><a href="http://localhost/phpmyadmin/tbl_structure.php?server=1&amp;db=upgradpg&amp;table=lab_result&amp;token=e9058a1070a7b50aac79bd94f80b6d0a"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Structure" alt="Structure" class="icon ic_b_props"></a></div><a class="hover_show_full" href="http://localhost/phpmyadmin/sql.php?server=1&amp;db=upgradpg&amp;table=lab_result&amp;pos=0&amp;token=e9058a1070a7b50aac79bd94f80b6d0a" title="Browse">lab_result</a><span class="navItemControls"><a href="http://localhost/phpmyadmin/navigation.php?token=e9058a1070a7b50aac79bd94f80b6d0a&amp;hideNavItem=true&amp;itemType=table&amp;itemName=lab_result&amp;dbName=upgradpg" class="hideNavItem ajax"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Hide" alt="Hide" class="icon ic_lightbulb_off"></a></span><div class="clearfloat"></div></li><li class="table"><div class="block"><i></i><b></b><a class="expander" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#"><span class="hide aPath">cm9vdA==.dXBncmFkcGc=.dGFibGVz.cm9sZQ==</span><span class="hide vPath">cm9vdA==.dXBncmFkcGc=.VGFibGVz.cm9sZQ==</span><span class="hide pos">0</span><span class="hide pos2_name">tables</span><span class="hide pos2_value">0</span><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Expand/Collapse" alt="Expand/Collapse" class="icon ic_b_plus"></a></div><div class="block "><a href="http://localhost/phpmyadmin/tbl_structure.php?server=1&amp;db=upgradpg&amp;table=role&amp;token=e9058a1070a7b50aac79bd94f80b6d0a"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Structure" alt="Structure" class="icon ic_b_props"></a></div><a class="hover_show_full" href="http://localhost/phpmyadmin/sql.php?server=1&amp;db=upgradpg&amp;table=role&amp;pos=0&amp;token=e9058a1070a7b50aac79bd94f80b6d0a" title="Browse">role</a><span class="navItemControls"><a href="http://localhost/phpmyadmin/navigation.php?token=e9058a1070a7b50aac79bd94f80b6d0a&amp;hideNavItem=true&amp;itemType=table&amp;itemName=role&amp;dbName=upgradpg" class="hideNavItem ajax"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Hide" alt="Hide" class="icon ic_lightbulb_off"></a></span><div class="clearfloat"></div></li><li class="table"><div class="block"><i></i><b></b><a class="expander" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#"><span class="hide aPath">cm9vdA==.dXBncmFkcGc=.dGFibGVz.dGVzdF9wb3NpdGl2ZV9jb3VudF90aHJlc2hvbGQ=</span><span class="hide vPath">cm9vdA==.dXBncmFkcGc=.VGFibGVz.dGVzdF9wb3NpdGl2ZV9jb3VudF90aHJlc2hvbGQ=</span><span class="hide pos">0</span><span class="hide pos2_name">tables</span><span class="hide pos2_value">0</span><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Expand/Collapse" alt="Expand/Collapse" class="icon ic_b_plus"></a></div><div class="block "><a href="http://localhost/phpmyadmin/tbl_structure.php?server=1&amp;db=upgradpg&amp;table=test_positive_count_threshold&amp;token=e9058a1070a7b50aac79bd94f80b6d0a"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Structure" alt="Structure" class="icon ic_b_props"></a></div><a class="hover_show_full" href="http://localhost/phpmyadmin/sql.php?server=1&amp;db=upgradpg&amp;table=test_positive_count_threshold&amp;pos=0&amp;token=e9058a1070a7b50aac79bd94f80b6d0a" title="Browse">test_positive_count_threshold</a><span class="navItemControls"><a href="http://localhost/phpmyadmin/navigation.php?token=e9058a1070a7b50aac79bd94f80b6d0a&amp;hideNavItem=true&amp;itemType=table&amp;itemName=test_positive_count_threshold&amp;dbName=upgradpg" class="hideNavItem ajax"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Hide" alt="Hide" class="icon ic_lightbulb_off"></a></span><div class="clearfloat"></div></li><li class="table"><div class="block"><i></i><b></b><a class="expander" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#"><span class="hide aPath">cm9vdA==.dXBncmFkcGc=.dGFibGVz.dGVzdF9yZXF1ZXN0</span><span class="hide vPath">cm9vdA==.dXBncmFkcGc=.VGFibGVz.dGVzdF9yZXF1ZXN0</span><span class="hide pos">0</span><span class="hide pos2_name">tables</span><span class="hide pos2_value">0</span><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Expand/Collapse" alt="Expand/Collapse" class="icon ic_b_plus"></a></div><div class="block "><a href="http://localhost/phpmyadmin/tbl_structure.php?server=1&amp;db=upgradpg&amp;table=test_request&amp;token=e9058a1070a7b50aac79bd94f80b6d0a"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Structure" alt="Structure" class="icon ic_b_props"></a></div><a class="hover_show_full" href="http://localhost/phpmyadmin/sql.php?server=1&amp;db=upgradpg&amp;table=test_request&amp;pos=0&amp;token=e9058a1070a7b50aac79bd94f80b6d0a" title="Browse">test_request</a><span class="navItemControls"><a href="http://localhost/phpmyadmin/navigation.php?token=e9058a1070a7b50aac79bd94f80b6d0a&amp;hideNavItem=true&amp;itemType=table&amp;itemName=test_request&amp;dbName=upgradpg" class="hideNavItem ajax"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Hide" alt="Hide" class="icon ic_lightbulb_off"></a></span><div class="clearfloat"></div></li><li class="table"><div class="block"><i></i><b></b><a class="expander" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#"><span class="hide aPath">cm9vdA==.dXBncmFkcGc=.dGFibGVz.dGVzdF9yZXF1ZXN0X2Zsb3c=</span><span class="hide vPath">cm9vdA==.dXBncmFkcGc=.VGFibGVz.dGVzdF9yZXF1ZXN0X2Zsb3c=</span><span class="hide pos">0</span><span class="hide pos2_name">tables</span><span class="hide pos2_value">0</span><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Expand/Collapse" alt="Expand/Collapse" class="icon ic_b_plus"></a></div><div class="block "><a href="http://localhost/phpmyadmin/tbl_structure.php?server=1&amp;db=upgradpg&amp;table=test_request_flow&amp;token=e9058a1070a7b50aac79bd94f80b6d0a"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Structure" alt="Structure" class="icon ic_b_props"></a></div><a class="hover_show_full" href="http://localhost/phpmyadmin/sql.php?server=1&amp;db=upgradpg&amp;table=test_request_flow&amp;pos=0&amp;token=e9058a1070a7b50aac79bd94f80b6d0a" title="Browse">test_request_flow</a><span class="navItemControls"><a href="http://localhost/phpmyadmin/navigation.php?token=e9058a1070a7b50aac79bd94f80b6d0a&amp;hideNavItem=true&amp;itemType=table&amp;itemName=test_request_flow&amp;dbName=upgradpg" class="hideNavItem ajax"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Hide" alt="Hide" class="icon ic_lightbulb_off"></a></span><div class="clearfloat"></div></li><li class="table"><div class="block"><i></i><b></b><a class="expander" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#"><span class="hide aPath">cm9vdA==.dXBncmFkcGc=.dGFibGVz.dXNlcg==</span><span class="hide vPath">cm9vdA==.dXBncmFkcGc=.VGFibGVz.dXNlcg==</span><span class="hide pos">0</span><span class="hide pos2_name">tables</span><span class="hide pos2_value">0</span><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Expand/Collapse" alt="Expand/Collapse" class="icon ic_b_plus"></a></div><div class="block "><a href="http://localhost/phpmyadmin/tbl_structure.php?server=1&amp;db=upgradpg&amp;table=user&amp;token=e9058a1070a7b50aac79bd94f80b6d0a"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Structure" alt="Structure" class="icon ic_b_props"></a></div><a class="hover_show_full" href="http://localhost/phpmyadmin/sql.php?server=1&amp;db=upgradpg&amp;table=user&amp;pos=0&amp;token=e9058a1070a7b50aac79bd94f80b6d0a" title="Browse">user</a><span class="navItemControls"><a href="http://localhost/phpmyadmin/navigation.php?token=e9058a1070a7b50aac79bd94f80b6d0a&amp;hideNavItem=true&amp;itemType=table&amp;itemName=user&amp;dbName=upgradpg" class="hideNavItem ajax"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Hide" alt="Hide" class="icon ic_lightbulb_off"></a></span><div class="clearfloat"></div></li><li class="last table"><div class="block"><i></i><a class="expander" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#"><span class="hide aPath">cm9vdA==.dXBncmFkcGc=.dGFibGVz.dXNlcl9yb2xlcw==</span><span class="hide vPath">cm9vdA==.dXBncmFkcGc=.VGFibGVz.dXNlcl9yb2xlcw==</span><span class="hide pos">0</span><span class="hide pos2_name">tables</span><span class="hide pos2_value">0</span><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Expand/Collapse" alt="Expand/Collapse" class="icon ic_b_plus"></a></div><div class="block "><a href="http://localhost/phpmyadmin/tbl_structure.php?server=1&amp;db=upgradpg&amp;table=user_roles&amp;token=e9058a1070a7b50aac79bd94f80b6d0a"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Structure" alt="Structure" class="icon ic_b_props"></a></div><a class="hover_show_full" href="http://localhost/phpmyadmin/sql.php?server=1&amp;db=upgradpg&amp;table=user_roles&amp;pos=0&amp;token=e9058a1070a7b50aac79bd94f80b6d0a" title="Browse">user_roles</a><span class="navItemControls"><a href="http://localhost/phpmyadmin/navigation.php?token=e9058a1070a7b50aac79bd94f80b6d0a&amp;hideNavItem=true&amp;itemType=table&amp;itemName=user_roles&amp;dbName=upgradpg" class="hideNavItem ajax"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Hide" alt="Hide" class="icon ic_lightbulb_off"></a></span><div class="clearfloat"></div></li></ul></div></li></ul></div></div><div id="pma_navi_settings_container"><div id="pma_navigation_settings"><div class="page_settings"><form method="post" action="http://localhost/phpmyadmin/db_designer.php?db=upgradpg&amp;table=&amp;server=1&amp;target=&amp;token=e9058a1070a7b50aac79bd94f80b6d0a" class="config-form disableAjax"><input type="hidden" name="tab_hash" value=""><input type="hidden" name="check_page_refresh" id="check_page_refresh" value="1">
+<input type="hidden" name="token" value="e9058a1070a7b50aac79bd94f80b6d0a">
+<input type="hidden" name="submit_save" value="Navi_panel"><ul class="tabs">
+
+                                    <li class="active">
+
+            <a href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#Navi_panel">
+            Navigation panel            </a>
+        </li>
+                                <li>
+
+            <a href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#Navi_tree">
+            Navigation tree            </a>
+        </li>
+                                <li>
+
+            <a href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#Navi_databases">
+            Databases            </a>
+        </li>
+                                <li>
+
+            <a href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#Navi_tables">
+            Tables            </a>
+        </li>
+            </ul><br clear="right"><div class="tabs_contents"><fieldset class="optbox" id="Navi_panel" style="display: block;"><legend>Navigation panel</legend><p>Customize appearance of the navigation panel.</p><table width="100%" cellspacing="0"><tbody><tr><th><label for="ShowDatabasesNavigationAsTree">Show databases navigation as tree</label><span class="doc"><a href="http://localhost/phpmyadmin/doc/html/config.html#cfg_ShowDatabasesNavigationAsTree" target="documentation"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Documentation" alt="Documentation" class="icon ic_b_help"></a>
+</span><small>In the navigation panel, replaces the database tree with a selector</small></th><td><span class="checkbox"><input type="checkbox" name="ShowDatabasesNavigationAsTree" id="ShowDatabasesNavigationAsTree" checked="checked"></span><a class="restore-default" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#ShowDatabasesNavigationAsTree" title="Restore default value" style="display: inline-block; opacity: 0.25;"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="NavigationLinkWithMainPanel">Link with main panel</label><span class="doc"><a href="http://localhost/phpmyadmin/doc/html/config.html#cfg_NavigationLinkWithMainPanel" target="documentation"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Documentation" alt="Documentation" class="icon ic_b_help"></a>
+</span><small>Link with main panel by highlighting the current database or table.</small></th><td><span class="checkbox"><input type="checkbox" name="NavigationLinkWithMainPanel" id="NavigationLinkWithMainPanel" checked="checked"></span><a class="restore-default" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#NavigationLinkWithMainPanel" title="Restore default value" style="display: inline-block; opacity: 0.25;"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="NavigationDisplayLogo">Display logo</label><span class="doc"><a href="http://localhost/phpmyadmin/doc/html/config.html#cfg_NavigationDisplayLogo" target="documentation"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Documentation" alt="Documentation" class="icon ic_b_help"></a>
+</span><small>Show logo in navigation panel.</small></th><td><span class="checkbox"><input type="checkbox" name="NavigationDisplayLogo" id="NavigationDisplayLogo" checked="checked"></span><a class="restore-default" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#NavigationDisplayLogo" title="Restore default value" style="display: inline-block; opacity: 0.25;"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="NavigationLogoLink">Logo link URL</label><span class="doc"><a href="http://localhost/phpmyadmin/doc/html/config.html#cfg_NavigationLogoLink" target="documentation"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Documentation" alt="Documentation" class="icon ic_b_help"></a>
+</span><small>URL where logo in the navigation panel will point to.</small></th><td><input type="text" size="40" name="NavigationLogoLink" id="NavigationLogoLink" value="index.php"><a class="restore-default" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#NavigationLogoLink" title="Restore default value" style="display: inline-block; opacity: 0.25;"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="NavigationLogoLinkWindow">Logo link target</label><span class="doc"><a href="http://localhost/phpmyadmin/doc/html/config.html#cfg_NavigationLogoLinkWindow" target="documentation"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Documentation" alt="Documentation" class="icon ic_b_help"></a>
+</span><small>Open the linked page in the main window (<kbd>main</kbd>) or in a new one (<kbd>new</kbd>).</small></th><td><select name="NavigationLogoLinkWindow" id="NavigationLogoLinkWindow"><option value="main" selected="selected">main</option><option value="new">new</option></select><a class="restore-default" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#NavigationLogoLinkWindow" title="Restore default value" style="display: inline-block; opacity: 0.25;"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="NavigationTreePointerEnable">Enable highlighting</label><span class="doc"><a href="http://localhost/phpmyadmin/doc/html/config.html#cfg_NavigationTreePointerEnable" target="documentation"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Documentation" alt="Documentation" class="icon ic_b_help"></a>
+</span><small>Highlight server under the mouse cursor.</small></th><td><span class="checkbox"><input type="checkbox" name="NavigationTreePointerEnable" id="NavigationTreePointerEnable" checked="checked"></span><a class="restore-default" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#NavigationTreePointerEnable" title="Restore default value" style="display: inline-block; opacity: 0.25;"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="FirstLevelNavigationItems">Maximum items on first level</label><span class="doc"><a href="http://localhost/phpmyadmin/doc/html/config.html#cfg_FirstLevelNavigationItems" target="documentation"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Documentation" alt="Documentation" class="icon ic_b_help"></a>
+</span><small>The number of items that can be displayed on each page on the first level of the navigation tree.</small></th><td><input type="number" name="FirstLevelNavigationItems" id="FirstLevelNavigationItems" value="100"><a class="restore-default" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#FirstLevelNavigationItems" title="Restore default value" style="display: inline-block; opacity: 0.25;"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="NavigationTreeDisplayItemFilterMinimum">Minimum number of items to display the filter box</label><span class="doc"><a href="http://localhost/phpmyadmin/doc/html/config.html#cfg_NavigationTreeDisplayItemFilterMinimum" target="documentation"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Documentation" alt="Documentation" class="icon ic_b_help"></a>
+</span><small>Defines the minimum number of items (tables, views, routines and events) to display a filter box.</small></th><td><input type="number" name="NavigationTreeDisplayItemFilterMinimum" id="NavigationTreeDisplayItemFilterMinimum" value="30"><a class="restore-default" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#NavigationTreeDisplayItemFilterMinimum" title="Restore default value" style="display: inline-block; opacity: 0.25;"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="NumRecentTables">Recently used tables</label><span class="doc"><a href="http://localhost/phpmyadmin/doc/html/config.html#cfg_NumRecentTables" target="documentation"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Documentation" alt="Documentation" class="icon ic_b_help"></a>
+</span><small>Maximum number of recently used tables; set 0 to disable.</small></th><td><input type="number" name="NumRecentTables" id="NumRecentTables" value="10"><a class="restore-default" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#NumRecentTables" title="Restore default value" style="display: inline-block; opacity: 0.25;"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="NumFavoriteTables">Favorite tables</label><span class="doc"><a href="http://localhost/phpmyadmin/doc/html/config.html#cfg_NumFavoriteTables" target="documentation"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Documentation" alt="Documentation" class="icon ic_b_help"></a>
+</span><small>Maximum number of favorite tables; set 0 to disable.</small></th><td><input type="number" name="NumFavoriteTables" id="NumFavoriteTables" value="10"><a class="restore-default" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#NumFavoriteTables" title="Restore default value" style="display: inline-block; opacity: 0.25;"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr></tbody></table></fieldset><fieldset class="optbox" id="Navi_tree" style="display: none;"><legend>Navigation tree</legend><p>Customize the navigation tree.</p><table width="100%" cellspacing="0"><tbody><tr><th><label for="MaxNavigationItems">Maximum items in branch</label><span class="doc"><a href="http://localhost/phpmyadmin/doc/html/config.html#cfg_MaxNavigationItems" target="documentation"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Documentation" alt="Documentation" class="icon ic_b_help"></a>
+</span><small>The number of items that can be displayed on each page of the navigation tree.</small></th><td><input type="number" name="MaxNavigationItems" id="MaxNavigationItems" value="50"><a class="restore-default" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#MaxNavigationItems" title="Restore default value" style="display: inline-block; opacity: 0.25;"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="NavigationTreeEnableGrouping">Group items in the tree</label><span class="doc"><a href="http://localhost/phpmyadmin/doc/html/config.html#cfg_NavigationTreeEnableGrouping" target="documentation"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Documentation" alt="Documentation" class="icon ic_b_help"></a>
+</span><small>Group items in the navigation tree (determined by the separator defined in the Databases and Tables tabs above).</small></th><td><span class="checkbox"><input type="checkbox" name="NavigationTreeEnableGrouping" id="NavigationTreeEnableGrouping" checked="checked"></span><a class="restore-default" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#NavigationTreeEnableGrouping" title="Restore default value" style="display: inline-block; opacity: 0.25;"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="NavigationTreeEnableExpansion">Enable navigation tree expansion</label><span class="doc"><a href="http://localhost/phpmyadmin/doc/html/config.html#cfg_NavigationTreeEnableExpansion" target="documentation"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Documentation" alt="Documentation" class="icon ic_b_help"></a>
+</span><small>Whether to offer the possibility of tree expansion in the navigation panel.</small></th><td><span class="checkbox"><input type="checkbox" name="NavigationTreeEnableExpansion" id="NavigationTreeEnableExpansion" checked="checked"></span><a class="restore-default" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#NavigationTreeEnableExpansion" title="Restore default value" style="display: inline-block; opacity: 0.25;"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="NavigationTreeShowTables">Show tables in tree</label><span class="doc"><a href="http://localhost/phpmyadmin/doc/html/config.html#cfg_NavigationTreeShowTables" target="documentation"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Documentation" alt="Documentation" class="icon ic_b_help"></a>
+</span><small>Whether to show tables under database in the navigation tree</small></th><td><span class="checkbox"><input type="checkbox" name="NavigationTreeShowTables" id="NavigationTreeShowTables" checked="checked"></span><a class="restore-default" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#NavigationTreeShowTables" title="Restore default value" style="display: inline-block; opacity: 0.25;"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="NavigationTreeShowViews">Show views in tree</label><span class="doc"><a href="http://localhost/phpmyadmin/doc/html/config.html#cfg_NavigationTreeShowViews" target="documentation"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Documentation" alt="Documentation" class="icon ic_b_help"></a>
+</span><small>Whether to show views under database in the navigation tree</small></th><td><span class="checkbox"><input type="checkbox" name="NavigationTreeShowViews" id="NavigationTreeShowViews" checked="checked"></span><a class="restore-default" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#NavigationTreeShowViews" title="Restore default value" style="display: inline-block; opacity: 0.25;"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="NavigationTreeShowFunctions">Show functions in tree</label><span class="doc"><a href="http://localhost/phpmyadmin/doc/html/config.html#cfg_NavigationTreeShowFunctions" target="documentation"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Documentation" alt="Documentation" class="icon ic_b_help"></a>
+</span><small>Whether to show functions under database in the navigation tree</small></th><td><span class="checkbox"><input type="checkbox" name="NavigationTreeShowFunctions" id="NavigationTreeShowFunctions" checked="checked"></span><a class="restore-default" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#NavigationTreeShowFunctions" title="Restore default value" style="display: inline-block; opacity: 0.25;"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="NavigationTreeShowProcedures">Show procedures in tree</label><span class="doc"><a href="http://localhost/phpmyadmin/doc/html/config.html#cfg_NavigationTreeShowProcedures" target="documentation"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Documentation" alt="Documentation" class="icon ic_b_help"></a>
+</span><small>Whether to show procedures under database in the navigation tree</small></th><td><span class="checkbox"><input type="checkbox" name="NavigationTreeShowProcedures" id="NavigationTreeShowProcedures" checked="checked"></span><a class="restore-default" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#NavigationTreeShowProcedures" title="Restore default value" style="display: inline-block; opacity: 0.25;"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="NavigationTreeShowEvents">Show events in tree</label><span class="doc"><a href="http://localhost/phpmyadmin/doc/html/config.html#cfg_NavigationTreeShowEvents" target="documentation"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Documentation" alt="Documentation" class="icon ic_b_help"></a>
+</span><small>Whether to show events under database in the navigation tree</small></th><td><span class="checkbox"><input type="checkbox" name="NavigationTreeShowEvents" id="NavigationTreeShowEvents" checked="checked"></span><a class="restore-default" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#NavigationTreeShowEvents" title="Restore default value" style="display: inline-block; opacity: 0.25;"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr></tbody></table></fieldset><fieldset class="optbox" id="Navi_databases" style="display: none;"><legend>Databases</legend><p>Databases display options.</p><table width="100%" cellspacing="0"><tbody><tr><th><label for="NavigationTreeDisplayDbFilterMinimum">Minimum number of databases to display the database filter box</label><span class="doc"><a href="http://localhost/phpmyadmin/doc/html/config.html#cfg_NavigationTreeDisplayDbFilterMinimum" target="documentation"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Documentation" alt="Documentation" class="icon ic_b_help"></a>
+</span></th><td><input type="number" name="NavigationTreeDisplayDbFilterMinimum" id="NavigationTreeDisplayDbFilterMinimum" value="30"><a class="restore-default" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#NavigationTreeDisplayDbFilterMinimum" title="Restore default value" style="display: inline-block; opacity: 0.25;"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="NavigationTreeDbSeparator">Database tree separator</label><span class="doc"><a href="http://localhost/phpmyadmin/doc/html/config.html#cfg_NavigationTreeDbSeparator" target="documentation"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Documentation" alt="Documentation" class="icon ic_b_help"></a>
+</span><small>String that separates databases into different tree levels.</small></th><td><input type="text" size="25" name="NavigationTreeDbSeparator" id="NavigationTreeDbSeparator" value="_"><a class="restore-default" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#NavigationTreeDbSeparator" title="Restore default value" style="display: inline-block; opacity: 0.25;"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr></tbody></table></fieldset><fieldset class="optbox" id="Navi_tables" style="display: none;"><legend>Tables</legend><p>Tables display options.</p><table width="100%" cellspacing="0"><tbody><tr><th><label for="NavigationTreeDefaultTabTable">Target for quick access icon</label><span class="doc"><a href="http://localhost/phpmyadmin/doc/html/config.html#cfg_NavigationTreeDefaultTabTable" target="documentation"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Documentation" alt="Documentation" class="icon ic_b_help"></a>
+</span></th><td><select name="NavigationTreeDefaultTabTable" id="NavigationTreeDefaultTabTable"><option value="structure" selected="selected">Structure</option><option value="sql">SQL</option><option value="search">Search</option><option value="insert">Insert</option><option value="browse">Browse</option></select><a class="restore-default" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#NavigationTreeDefaultTabTable" title="Restore default value" style="display: inline-block; opacity: 0.25;"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="NavigationTreeDefaultTabTable2">Target for second quick access icon</label><span class="doc"><a href="http://localhost/phpmyadmin/doc/html/config.html#cfg_NavigationTreeDefaultTabTable2" target="documentation"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Documentation" alt="Documentation" class="icon ic_b_help"></a>
+</span></th><td><select name="NavigationTreeDefaultTabTable2" id="NavigationTreeDefaultTabTable2"><option value="" selected="selected"></option><option value="structure">Structure</option><option value="sql">SQL</option><option value="search">Search</option><option value="insert">Insert</option><option value="browse">Browse</option></select><a class="restore-default" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#NavigationTreeDefaultTabTable2" title="Restore default value" style="display: inline-block; opacity: 0.25;"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="NavigationTreeTableSeparator">Table tree separator</label><span class="doc"><a href="http://localhost/phpmyadmin/doc/html/config.html#cfg_NavigationTreeTableSeparator" target="documentation"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Documentation" alt="Documentation" class="icon ic_b_help"></a>
+</span><small>String that separates tables into different tree levels.</small></th><td><input type="text" size="25" name="NavigationTreeTableSeparator" id="NavigationTreeTableSeparator" value="__"><a class="restore-default" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#NavigationTreeTableSeparator" title="Restore default value" style="display: inline-block; opacity: 0.25;"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="NavigationTreeTableLevel">Maximum table tree depth</label><span class="doc"><a href="http://localhost/phpmyadmin/doc/html/config.html#cfg_NavigationTreeTableLevel" target="documentation"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Documentation" alt="Documentation" class="icon ic_b_help"></a>
+</span></th><td><input type="number" name="NavigationTreeTableLevel" id="NavigationTreeTableLevel" value="1"><a class="restore-default" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#NavigationTreeTableLevel" title="Restore default value" style="display: inline-block; opacity: 0.25;"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr></tbody></table></fieldset></div>
+</form>
+<script type="text/javascript">
+if (typeof configInlineParams === "undefined" || !Array.isArray(configInlineParams)) configInlineParams = [];
+configInlineParams.push(function() {
+validateField('FirstLevelNavigationItems', 'PMA_validatePositiveNumber', true);
+validateField('NumRecentTables', 'PMA_validateNonNegativeNumber', true);
+validateField('NumFavoriteTables', 'PMA_validateNonNegativeNumber', true);
+validateField('MaxNavigationItems', 'PMA_validatePositiveNumber', true);
+validateField('NavigationTreeTableLevel', 'PMA_validatePositiveNumber', true);
+$.extend(PMA_messages, {
+	'error_nan_p': 'Not a positive number!',
+	'error_nan_nneg': 'Not a non-negative number!',
+	'error_incorrect_port': 'Not a valid port number!',
+	'error_invalid_value': 'Incorrect value!',
+	'error_value_lte': 'Value must be equal or lower than %s!'});
+$.extend(defaultValues, {
+	'ShowDatabasesNavigationAsTree': true,
+	'NavigationLinkWithMainPanel': true,
+	'NavigationDisplayLogo': true,
+	'NavigationLogoLink': 'index.php',
+	'NavigationLogoLinkWindow': ['main'],
+	'NavigationTreePointerEnable': true,
+	'FirstLevelNavigationItems': '100',
+	'NavigationTreeDisplayItemFilterMinimum': '30',
+	'NumRecentTables': '10',
+	'NumFavoriteTables': '10',
+	'MaxNavigationItems': '50',
+	'NavigationTreeEnableGrouping': true,
+	'NavigationTreeEnableExpansion': true,
+	'NavigationTreeShowTables': true,
+	'NavigationTreeShowViews': true,
+	'NavigationTreeShowFunctions': true,
+	'NavigationTreeShowProcedures': true,
+	'NavigationTreeShowEvents': true,
+	'NavigationTreeDisplayDbFilterMinimum': '30',
+	'NavigationTreeDbSeparator': '_',
+	'NavigationTreeDefaultTabTable': ['structure'],
+	'NavigationTreeDefaultTabTable2': [''],
+	'NavigationTreeTableSeparator': '__',
+	'NavigationTreeTableLevel': '1'});
+});
+if (typeof configScriptLoaded !== "undefined" && configInlineParams) loadInlineConfig();
+</script></div></div></div></div><div class="pma_drop_handler">Drop files here</div><div class="pma_sql_import_status"><h2>SQL upload ( <span class="pma_import_count">0</span> ) <span class="close">x</span><span class="minimize">-</span></h2><div></div></div></div><div id="pma_header"></div><div id="floating_menubar" style="margin-left: 243px; left: 0px; position: fixed; top: 0px; width: 100%; z-index: 99;"><div id="serverinfo"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="" alt="" class="icon ic_s_host item"><a href="http://localhost/phpmyadmin/index.php?token=e9058a1070a7b50aac79bd94f80b6d0a" class="item">Server: localhost:3306</a><span class="separator item">&nbsp;»</span><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="" alt="" class="icon ic_s_db item"><a href="http://localhost/phpmyadmin/db_structure.php?db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a" class="item">Database: upgradpg</a><div class="clearfloat"></div></div><div id="topmenucontainer" class="menucontainer"><ul id="topmenu" class="resizable-menu"><li>
+
+            <a href="http://localhost/phpmyadmin/db_structure.php?db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a" class="tab">
+            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Structure" alt="Structure" class="icon ic_b_props">&nbsp;Structure            </a>
+        </li>
+<li>
+
+            <a href="http://localhost/phpmyadmin/db_sql.php?db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a" class="tab">
+            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="SQL" alt="SQL" class="icon ic_b_sql">&nbsp;SQL            </a>
+        </li>
+<li>
+
+            <a href="http://localhost/phpmyadmin/db_search.php?db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a" class="tab">
+            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Search" alt="Search" class="icon ic_b_search">&nbsp;Search            </a>
+        </li>
+<li>
+
+            <a href="http://localhost/phpmyadmin/db_qbe.php?db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a" class="tab">
+            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Query" alt="Query" class="icon ic_s_db">&nbsp;Query            </a>
+        </li>
+<li>
+
+            <a href="http://localhost/phpmyadmin/db_export.php?db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a" class="tab">
+            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Export" alt="Export" class="icon ic_b_export">&nbsp;Export            </a>
+        </li>
+<li>
+
+            <a href="http://localhost/phpmyadmin/db_import.php?db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a" class="tab">
+            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Import" alt="Import" class="icon ic_b_import">&nbsp;Import            </a>
+        </li>
+<li>
+
+            <a href="http://localhost/phpmyadmin/db_operations.php?db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a" class="tab">
+            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Operations" alt="Operations" class="icon ic_b_tblops">&nbsp;Operations            </a>
+        </li>
+<li>
+
+            <a href="http://localhost/phpmyadmin/server_privileges.php?db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;checkprivsdb=upgradpg&amp;viewing_mode=db" class="tab">
+            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Privileges" alt="Privileges" class="icon ic_s_rights">&nbsp;Privileges            </a>
+        </li>
+<li>
+
+            <a href="http://localhost/phpmyadmin/db_routines.php?db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a" class="tab">
+            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Routines" alt="Routines" class="icon ic_b_routines">&nbsp;Routines            </a>
+        </li>
+<li>
+
+            <a href="http://localhost/phpmyadmin/db_events.php?db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a" class="tab">
+            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Events" alt="Events" class="icon ic_b_events">&nbsp;Events            </a>
+        </li>
+
+
+
+
+<li>
+
+            <a href="http://localhost/phpmyadmin/db_triggers.php?db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a" class="tab">
+            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Triggers" alt="Triggers" class="icon ic_b_triggers">&nbsp;Triggers            </a>
+        </li><li>
+
+            <a href="http://localhost/phpmyadmin/db_tracking.php?db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a" class="tab">
+            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Tracking" alt="Tracking" class="icon ic_eye">&nbsp;Tracking            </a>
+        </li><li class="active">
+
+            <a href="http://localhost/phpmyadmin/db_designer.php?db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a" id="designer_tab" class="tabactive">
+            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Designer" alt="Designer" class="icon ic_b_relations">&nbsp;Designer            </a>
+        </li><li>
+
+            <a href="http://localhost/phpmyadmin/db_central_columns.php?db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a" class="tab">
+            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Central columns" alt="Central columns" class="icon ic_centralColumns">&nbsp;Central columns            </a>
+        </li><li class="submenu active" style=""><a href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#" class="nowrap tabactive"><img alt="" title="" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" class="icon ic_b_more">More</a><ul class="notonly"></ul></li><div class="clearfloat"></div></ul>
+</div>
+</div>
+<span id="page_nav_icons"><span id="lock_page_icon"></span><span id="page_settings_icon" style="display: none;"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Page-related settings" alt="Page-related settings" class="icon ic_s_cog"></span><a id="goto_pagetop" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Click on the bar to scroll to top of page" alt="Click on the bar to scroll to top of page" class="icon ic_s_top"></a></span><div id="pma_console_container"><div id="pma_console" style="margin-left: 243px;"><div class="toolbar collapsed"><div class="switch_button console_switch"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="SQL Query Console" alt="SQL Query Console" class="icon ic_console"><span>Console</span></div><div class="button clear"><span>Clear</span></div><div class="button history"><span>History</span></div><div class="button options"><span>Options</span></div><div class="button bookmarks"><span>Bookmarks</span></div><div class="button debug hide"><span>Debug SQL</span></div></div><div class="content" style="height: 92px; margin-bottom: -98px; display: none;"><div class="console_message_container"><div class="message welcome binded"><span><span id="instructions-0" style="display: inline;">Press Ctrl+Enter to execute query</span><span class="hide" id="instructions-1" style="display: none;">Press Enter to execute query</span></span></div><div class="message collapsed binded select successed" msgid="328670190438" targetdb="upgradpg" targettable="user"><div class="action_content"><span class="action collapse">Collapse</span> <span class="action expand">Expand</span> <span class="action requery">Requery</span> <span class="action edit">Edit</span> <span class="action explain">Explain</span> <span class="action profiling">Profiling</span> <span class="action bookmark">Bookmark</span> <span class="text failed">Query failed</span> <span class="text targetdb">Database: <span>upgradpg</span></span> <span class="text query_time" title="Wed Oct 28 2020 15:39:13 GMT+0530 (India Standard Time)">Queried time: <span>15:39:13</span></span> </div><div class="query highlighted"><span class="cm-keyword">SELECT</span> * <span class="cm-keyword">FROM</span> `user`</div></div><div class="message collapsed binded select successed" msgid="792672420691" targetdb="upgradpg" targettable="user_roles"><div class="action_content"><span class="action collapse">Collapse</span> <span class="action expand">Expand</span> <span class="action requery">Requery</span> <span class="action edit">Edit</span> <span class="action explain">Explain</span> <span class="action profiling">Profiling</span> <span class="action bookmark">Bookmark</span> <span class="text failed">Query failed</span> <span class="text targetdb">Database: <span>upgradpg</span></span> <span class="text query_time" title="Wed Oct 28 2020 15:39:21 GMT+0530 (India Standard Time)">Queried time: <span>15:39:21</span></span> </div><div class="query highlighted"><span class="cm-keyword">SELECT</span> * <span class="cm-keyword">FROM</span> `user_roles`</div></div><div class="message collapsed binded select successed" msgid="401135767999" targetdb="upgradpg" targettable="user"><div class="action_content"><span class="action collapse">Collapse</span> <span class="action expand">Expand</span> <span class="action requery">Requery</span> <span class="action edit">Edit</span> <span class="action explain">Explain</span> <span class="action profiling">Profiling</span> <span class="action bookmark">Bookmark</span> <span class="text failed">Query failed</span> <span class="text targetdb">Database: <span>upgradpg</span></span> <span class="text query_time" title="Wed Oct 28 2020 15:39:29 GMT+0530 (India Standard Time)">Queried time: <span>15:39:29</span></span> </div><div class="query highlighted"><span class="cm-keyword">SELECT</span> * <span class="cm-keyword">FROM</span> `user`</div></div></div><div class="query_input"><span class="console_query_input"><div class="CodeMirror cm-s-pma CodeMirror-wrap"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 16px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-vscrollbar" cm-not-content="true"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-hscrollbar" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 16px; margin-bottom: -15px; border-right-width: 15px; min-height: 15px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"><span><span>​</span>x</span></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 0px; top: 0px; height: 15px;">&nbsp;</div></div><div class="CodeMirror-code"><pre class=""><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 15px; width: 1px; top: 15px;"></div><div class="CodeMirror-gutters" style="height: 30px;"><div class="CodeMirror-gutter CodeMirror-lint-markers"></div></div></div></div></span></div></div><div class="mid_layer"></div><div class="card ungrouped" id="debug_console"><div class="toolbar"><div class="button order order_asc active"><span>ascending</span></div><div class="button order order_desc"><span>descending</span></div><div class="text"><span>Order:</span></div><div class="switch_button"><span>Debug SQL</span></div><div class="button order_by sort_count"><span>Count</span></div><div class="button order_by sort_exec active"><span>Execution order</span></div><div class="button order_by sort_time"><span>Time taken</span></div><div class="text"><span>Order by:</span></div><div class="button group_queries"><span>Group queries</span></div><div class="button ungroup_queries"><span>Ungroup queries</span></div></div><div class="content debug" style="height: 92px;"><div class="message welcome binded">Some error occurred while getting SQL debug info.</div><div class="debugLog"></div></div><div class="templates"><div class="debug_query action_content"><span class="action collapse">Collapse</span> <span class="action expand">Expand</span> <span class="action dbg_show_trace">Show trace</span> <span class="action dbg_hide_trace">Hide trace</span> <span class="text count hide">Count: <span></span></span><span class="text time">Time taken: <span></span></span></div></div></div><div class="card" id="pma_bookmarks"><div class="toolbar"><div class="switch_button"><span>Bookmarks</span></div><div class="button refresh"><span>Refresh</span></div><div class="button add"><span>Add</span></div></div><div class="content bookmark" style="height: 92px;"><div class="message welcome binded"><span>No bookmarks</span></div></div><div class="mid_layer"></div><div class="card add"><div class="toolbar"><div class="switch_button"><span>Add bookmark</span></div></div><div class="content add_bookmark" style="height: 92px;"><div class="options"><label>Label: <input type="text" name="label"></label> <label>Target database: <input type="text" name="targetdb"></label> <label><input type="checkbox" name="shared">Share this bookmark</label><button type="submit" name="submit">Ok</button></div><div class="query_input"><span class="bookmark_add_input"><div class="CodeMirror cm-s-pma CodeMirror-wrap"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 16px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-vscrollbar" cm-not-content="true"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-hscrollbar" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 16px; margin-bottom: -15px; border-right-width: 15px; min-height: 15px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 0px; top: 0px; height: 15px;">&nbsp;</div></div><div class="CodeMirror-code"><pre class=""><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 15px; width: 1px; top: 15px;"></div><div class="CodeMirror-gutters" style="height: 30px;"><div class="CodeMirror-gutter CodeMirror-lint-markers"></div></div></div></div></span></div></div></div></div><div class="card" id="pma_console_options"><div class="toolbar"><div class="switch_button"><span>Options</span></div><div class="button default"><span>Set default</span></div></div><div class="content" style="height: 92px;"><label><input type="checkbox" name="always_expand">Always expand query messages</label><br><label><input type="checkbox" name="start_history">Show query history at start</label><br><label><input type="checkbox" name="current_query">Show current browsing query</label><br><label><input type="checkbox" name="enter_executes">Execute queries on Enter and insert new line with Shift + Enter. To make this permanent, view settings.</label><br><label><input type="checkbox" name="dark_theme">Switch to dark theme</label><br></div></div><div class="templates"><div class="query_actions"><span class="action collapse">Collapse</span> <span class="action expand">Expand</span> <span class="action requery">Requery</span> <span class="action edit">Edit</span> <span class="action explain">Explain</span> <span class="action profiling">Profiling</span> <span class="action bookmark">Bookmark</span> <span class="text failed">Query failed</span> <span class="text targetdb">Database: <span></span></span> <span class="text query_time">Queried time: <span></span></span> </div></div></div></div><div id="page_content" style="margin-left: 3px;"><!-- Do not expand HTML here, invisible characters will make javascript crash -->
+<div id="script_server" class="hide">1</div>
+<div id="script_db" class="hide">upgradpg</div>
+<div id="script_token" class="hide">e9058a1070a7b50aac79bd94f80b6d0a</div>
+<div id="script_tables" class="hide">{"j_tabs":{"upgradpg.consultation":0,"upgradpg.document":0,"upgradpg.lab_result":0,"upgradpg.role":0,"upgradpg.test_positive_count_threshold":0,"upgradpg.test_request":0,"upgradpg.test_request_flow":0,"upgradpg.user":0,"upgradpg.user_roles":0},"h_tabs":{"upgradpg.consultation":1,"upgradpg.document":1,"upgradpg.lab_result":1,"upgradpg.role":1,"upgradpg.test_positive_count_threshold":1,"upgradpg.test_request":1,"upgradpg.test_request_flow":1,"upgradpg.user":1,"upgradpg.user_roles":1}}</div>
+<div id="script_contr" class="hide">[{"":{"upgradpg.consultation":{"doctor_id":["upgradpg.user","id"]}}},{"":{"upgradpg.consultation":{"request_request_id":["upgradpg.test_request","request_id"]}}},{"":{"upgradpg.document":{"user_id":["upgradpg.user","id"]}}},{"":{"upgradpg.lab_result":{"request_request_id":["upgradpg.test_request","request_id"]}}},{"":{"upgradpg.lab_result":{"tester_id":["upgradpg.user","id"]}}},{"":{"upgradpg.test_request":{"created_by_id":["upgradpg.user","id"]}}},{"":{"upgradpg.test_request_flow":{"changed_by_id":["upgradpg.user","id"]}}},{"":{"upgradpg.test_request_flow":{"request_request_id":["upgradpg.test_request","request_id"]}}},{"":{"upgradpg.user_roles":{"roles_id":["upgradpg.role","id"]}}},{"":{"upgradpg.user_roles":{"user_id":["upgradpg.user","id"]}}}]</div>
+<div id="script_display_field" class="hide">[]</div>
+<div id="script_display_page" class="hide">-1</div>
+<div id="pmd_tables_enabled" class="hide">1</div>    <div id="name-panel" style="overflow:hidden">
+        <span id="page_name" style="border:none">
+            Untitled        </span>
+        <span id="saved_state" style="border:none">*</span>
+    </div>
+<div class="pmd_header side-menu" id="side_menu">
+    <a class="M_butt" id="key_Show_left_menu" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#">
+        <img title="Show/Hide tables list" alt="v" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/downarrow2_m.png" data-down="./themes/pmahomme/img/pmd/downarrow2_m.png" data-up="./themes/pmahomme/img/pmd/uparrow2_m.png">
+        <span class="hide hidable" style="display: none;">
+            Show/Hide tables list        </span>
+    </a>
+    <a href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#" id="toggleFullscreen" class="M_butt">
+        <img title="View in fullscreen" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/viewInFullscreen.png" data-enter="./themes/pmahomme/img/pmd/viewInFullscreen.png" data-exit="./themes/pmahomme/img/pmd/exitFullscreen.png">
+        <span class="hide hidable" data-exit="Exit fullscreen" data-enter="View in fullscreen" style="display: none;">
+            View in fullscreen        </span>
+    </a>
+            <a id="newPage" href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#" class="M_butt">
+            <img title="New page" alt="" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/page_add.png">
+            <span class="hide hidable" style="display: none;">
+                New page            </span>
+        </a>
+        <a href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#" id="editPage" class="M_butt ajax">
+            <img title="Open page" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/page_edit.png">
+            <span class="hide hidable" style="display: none;">
+                Open page            </span>
+        </a>
+        <a href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#" id="savePos" class="M_butt">
+            <img title="Save page" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/save.png">
+            <span class="hide hidable" style="display: none;">
+                Save page            </span>
+        </a>
+        <a href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#" id="SaveAs" class="M_butt ajax">
+            <img title="Save page as" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/save_as.png">
+            <span class="hide hidable" style="display: none;">
+                Save page as            </span>
+        </a>
+        <a href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#" id="delPages" class="M_butt ajax">
+            <img title="Delete pages" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/page_delete.png">
+            <span class="hide hidable" style="display: none;">
+                Delete pages            </span>
+        </a>
+        <a href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#" id="StartTableNew" class="M_butt">
+            <img title="Create table" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/table.png">
+            <span class="hide hidable" style="display: none;">
+                Create table            </span>
+        </a>
+        <a href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#" class="M_butt" id="rel_button">
+            <img title="Create relation" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/relation.png">
+            <span class="hide hidable" style="display: none;">
+                Create relation            </span>
+        </a>
+        <a href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#" class="M_butt" id="display_field_button">
+            <img title="Choose column to display" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/display_field.png">
+            <span class="hide hidable" style="display: none;">
+                Choose column to display            </span>
+        </a>
+        <a href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#" id="reloadPage" class="M_butt">
+            <img title="Reload" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/reload.png">
+            <span class="hide hidable" style="display: none;">
+                Reload            </span>
+        </a>
+        <a href="http://localhost/phpmyadmin/doc/html/faq.html#faq6-31" target="documentation" class="M_butt">
+            <img title="Help" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/help.png">
+            <span class="hide hidable" style="display: none;">
+                Help            </span>
+        </a>
+        <a href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#" class="M_butt" id="angular_direct_button">
+        <img title="Angular links / Direct links" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/ang_direct.png">
+        <span class="hide hidable" style="display: none;">
+            Angular links / Direct links        </span>
+    </a>
+    <a href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#" class="M_butt" id="grid_button">
+        <img title="Snap to grid" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/grid.png">
+        <span class="hide hidable" style="display: none;">
+            Snap to grid        </span>
+    </a>
+    <a href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#" class="M_butt" id="key_SB_all">
+        <img title="Small/Big All" alt="v" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/downarrow1.png" data-down="./themes/pmahomme/img/pmd/downarrow1.png" data-right="./themes/pmahomme/img/pmd/rightarrow1.png">
+        <span class="hide hidable" style="display: none;">
+            Small/Big All        </span>
+    </a>
+    <a href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#" id="SmallTabInvert" class="M_butt">
+        <img title="Toggle small/big" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/bottom.png">
+        <span class="hide hidable" style="display: none;">
+            Toggle small/big        </span>
+    </a>
+    <a href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#" id="relLineInvert" class="M_butt_Selected_down">
+        <img title="Toggle relation lines" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/toggle_lines.png">
+        <span class="hide hidable" style="display: none;">
+            Toggle relation lines        </span>
+    </a>
+            <a href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#" id="exportPages" class="M_butt">
+            <img title="Export schema" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/export.png">
+            <span class="hide hidable" style="display: none;">
+                Export schema            </span>
+        </a>
+        <a href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#" class="M_butt" id="key_Left_Right">
+        <img title="Move Menu" alt="&gt;" data-right="./themes/pmahomme/img/pmd/2leftarrow_m.png" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/2rightarrow_m.png">
+        <span class="hide hidable" style="display: none;">
+            Move Menu        </span>
+    </a>
+    <a href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#" class="M_butt" id="pin_Text">
+        <img title="Pin text" alt="&gt;" data-right="./themes/pmahomme/img/pmd/anchor.png" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/anchor.png">
+        <span class="hide hidable" style="display: none;">
+            Pin text        </span>
+    </a>
+</div><div id="canvas_outer"><form action="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1" id="container-form" method="post" name="form1"><div id="osn_tab" style="width: 928px; height: 635px;">
+    <canvas class="pmd" id="canvas" width="925" height="632" style="display: inline-block;"></canvas>
+</div><div id="layer_menu" style="display: none; top: -1000px;">
+    <div class="center">
+        <a href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#" class="M_butt" target="_self">
+            <img title="Hide/Show all" alt="v" id="key_HS_all" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/downarrow1.png" data-down="./themes/pmahomme/img/pmd/downarrow1.png" data-right="./themes/pmahomme/img/pmd/rightarrow1.png">
+        </a>
+        <a href="http://localhost/phpmyadmin/db_designer.php?server=1&amp;db=upgradpg&amp;token=e9058a1070a7b50aac79bd94f80b6d0a&amp;page=-1#" class="M_butt" target="_self">
+            <img alt="v" id="key_HS" title="Hide/Show Tables with no relation" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/downarrow2.png" data-down="./themes/pmahomme/img/pmd/downarrow2.png" data-right="./themes/pmahomme/img/pmd/rightarrow2.png">
+        </a>
+    </div>
+    <div id="id_scroll_tab" class="scroll_tab">
+        <table width="100%" style="padding-left: 3px;">
+                            <tbody><tr>
+                    <td title="Structure" width="1px" onmouseover="this.className=&#39;L_butt2_2&#39;" onmouseout="this.className=&#39;L_butt2_1&#39;" class="L_butt2_1">
+                        <img alt="" table_name="consultation" class="scroll_tab_struct" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/exec.png">
+                    </td>
+                    <td width="1px">
+                        <input class="scroll_tab_checkbox" title="Hide" id="check_vis_upgradpg.consultation" style="margin:0;" type="checkbox" value="upgradpg.consultation" checked="checked">
+                    </td>
+                    <td class="pmd_Tabs" onmouseover="this.className=&#39;pmd_Tabs2&#39;" onmouseout="this.className=&#39;pmd_Tabs&#39;" pmd_url_table_name="upgradpg.consultation">
+                        upgradpg.consultation                    </td>
+                </tr>
+                            <tr>
+                    <td title="Structure" width="1px" onmouseover="this.className=&#39;L_butt2_2&#39;" onmouseout="this.className=&#39;L_butt2_1&#39;" class="L_butt2_1">
+                        <img alt="" table_name="document" class="scroll_tab_struct" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/exec.png">
+                    </td>
+                    <td width="1px">
+                        <input class="scroll_tab_checkbox" title="Hide" id="check_vis_upgradpg.document" style="margin:0;" type="checkbox" value="upgradpg.document" checked="checked">
+                    </td>
+                    <td class="pmd_Tabs" onmouseover="this.className=&#39;pmd_Tabs2&#39;" onmouseout="this.className=&#39;pmd_Tabs&#39;" pmd_url_table_name="upgradpg.document">
+                        upgradpg.document                    </td>
+                </tr>
+                            <tr>
+                    <td title="Structure" width="1px" onmouseover="this.className=&#39;L_butt2_2&#39;" onmouseout="this.className=&#39;L_butt2_1&#39;" class="L_butt2_1">
+                        <img alt="" table_name="lab_result" class="scroll_tab_struct" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/exec.png">
+                    </td>
+                    <td width="1px">
+                        <input class="scroll_tab_checkbox" title="Hide" id="check_vis_upgradpg.lab_result" style="margin:0;" type="checkbox" value="upgradpg.lab_result" checked="checked">
+                    </td>
+                    <td class="pmd_Tabs" onmouseover="this.className=&#39;pmd_Tabs2&#39;" onmouseout="this.className=&#39;pmd_Tabs&#39;" pmd_url_table_name="upgradpg.lab_result">
+                        upgradpg.lab_result                    </td>
+                </tr>
+                            <tr>
+                    <td title="Structure" width="1px" onmouseover="this.className=&#39;L_butt2_2&#39;" onmouseout="this.className=&#39;L_butt2_1&#39;" class="L_butt2_1">
+                        <img alt="" table_name="role" class="scroll_tab_struct" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/exec.png">
+                    </td>
+                    <td width="1px">
+                        <input class="scroll_tab_checkbox" title="Hide" id="check_vis_upgradpg.role" style="margin:0;" type="checkbox" value="upgradpg.role" checked="checked">
+                    </td>
+                    <td class="pmd_Tabs" onmouseover="this.className=&#39;pmd_Tabs2&#39;" onmouseout="this.className=&#39;pmd_Tabs&#39;" pmd_url_table_name="upgradpg.role">
+                        upgradpg.role                    </td>
+                </tr>
+                            <tr>
+                    <td title="Structure" width="1px" onmouseover="this.className=&#39;L_butt2_2&#39;" onmouseout="this.className=&#39;L_butt2_1&#39;" class="L_butt2_1">
+                        <img alt="" table_name="test_positive_count_threshold" class="scroll_tab_struct" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/exec.png">
+                    </td>
+                    <td width="1px">
+                        <input class="scroll_tab_checkbox" title="Hide" id="check_vis_upgradpg.test_positive_count_threshold" style="margin:0;" type="checkbox" value="upgradpg.test_positive_count_threshold" checked="checked">
+                    </td>
+                    <td class="pmd_Tabs" onmouseover="this.className=&#39;pmd_Tabs2&#39;" onmouseout="this.className=&#39;pmd_Tabs&#39;" pmd_url_table_name="upgradpg.test_positive_count_threshold">
+                        upgradpg.test_positive_count_threshold                    </td>
+                </tr>
+                            <tr>
+                    <td title="Structure" width="1px" onmouseover="this.className=&#39;L_butt2_2&#39;" onmouseout="this.className=&#39;L_butt2_1&#39;" class="L_butt2_1">
+                        <img alt="" table_name="test_request" class="scroll_tab_struct" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/exec.png">
+                    </td>
+                    <td width="1px">
+                        <input class="scroll_tab_checkbox" title="Hide" id="check_vis_upgradpg.test_request" style="margin:0;" type="checkbox" value="upgradpg.test_request" checked="checked">
+                    </td>
+                    <td class="pmd_Tabs" onmouseover="this.className=&#39;pmd_Tabs2&#39;" onmouseout="this.className=&#39;pmd_Tabs&#39;" pmd_url_table_name="upgradpg.test_request">
+                        upgradpg.test_request                    </td>
+                </tr>
+                            <tr>
+                    <td title="Structure" width="1px" onmouseover="this.className=&#39;L_butt2_2&#39;" onmouseout="this.className=&#39;L_butt2_1&#39;" class="L_butt2_1">
+                        <img alt="" table_name="test_request_flow" class="scroll_tab_struct" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/exec.png">
+                    </td>
+                    <td width="1px">
+                        <input class="scroll_tab_checkbox" title="Hide" id="check_vis_upgradpg.test_request_flow" style="margin:0;" type="checkbox" value="upgradpg.test_request_flow" checked="checked">
+                    </td>
+                    <td class="pmd_Tabs" onmouseover="this.className=&#39;pmd_Tabs2&#39;" onmouseout="this.className=&#39;pmd_Tabs&#39;" pmd_url_table_name="upgradpg.test_request_flow">
+                        upgradpg.test_request_flow                    </td>
+                </tr>
+                            <tr>
+                    <td title="Structure" width="1px" onmouseover="this.className=&#39;L_butt2_2&#39;" onmouseout="this.className=&#39;L_butt2_1&#39;" class="L_butt2_1">
+                        <img alt="" table_name="user" class="scroll_tab_struct" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/exec.png">
+                    </td>
+                    <td width="1px">
+                        <input class="scroll_tab_checkbox" title="Hide" id="check_vis_upgradpg.user" style="margin:0;" type="checkbox" value="upgradpg.user" checked="checked">
+                    </td>
+                    <td class="pmd_Tabs" onmouseover="this.className=&#39;pmd_Tabs2&#39;" onmouseout="this.className=&#39;pmd_Tabs&#39;" pmd_url_table_name="upgradpg.user">
+                        upgradpg.user                    </td>
+                </tr>
+                            <tr>
+                    <td title="Structure" width="1px" onmouseover="this.className=&#39;L_butt2_2&#39;" onmouseout="this.className=&#39;L_butt2_1&#39;" class="L_butt2_1">
+                        <img alt="" table_name="user_roles" class="scroll_tab_struct" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/exec.png">
+                    </td>
+                    <td width="1px">
+                        <input class="scroll_tab_checkbox" title="Hide" id="check_vis_upgradpg.user_roles" style="margin:0;" type="checkbox" value="upgradpg.user_roles" checked="checked">
+                    </td>
+                    <td class="pmd_Tabs" onmouseover="this.className=&#39;pmd_Tabs2&#39;" onmouseout="this.className=&#39;pmd_Tabs&#39;" pmd_url_table_name="upgradpg.user_roles">
+                        upgradpg.user_roles                    </td>
+                </tr>
+                    </tbody></table>
+    </div>
+    <!-- end id_scroll_tab -->
+    <div class="center">
+        Number of tables: 9    </div>
+    <div id="layer_menu_sizer" onmousedown="layer_menu_cur_click=1">
+        <div class="floatleft">
+            <img class="icon" data-right="./themes/pmahomme/img/pmd/resizeright.png" src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/resize.png">
+        </div>
+    </div>
+</div>
+<!-- end layer_menu -->
+    <input name="t_x[upgradpg.consultation]" type="hidden" id="t_x_upgradpg.consultation_">
+    <input name="t_y[upgradpg.consultation]" type="hidden" id="t_y_upgradpg.consultation_">
+    <input name="t_v[upgradpg.consultation]" type="hidden" id="t_v_upgradpg.consultation_">
+    <input name="t_h[upgradpg.consultation]" type="hidden" id="t_h_upgradpg.consultation_">
+    <!-- Why should we put styles here?! -->
+    <table id="upgradpg.consultation" cellpadding="0" cellspacing="0" class="pmd_tab" style="position: absolute; left: 673px; top: 185px; display: block; z-index: 1;" data-left="673" data-top="185">
+        <thead>
+            <tr class="header">
+                                <td class="small_tab" title="Show/hide columns" id="id_hide_tbody_upgradpg.consultation" table_name="upgradpg.consultation" onmouseover="this.className=&#39;small_tab2&#39;;" onmouseout="this.className=&#39;small_tab&#39;;">v</td>
+                <td class="small_tab_pref small_tab_pref_1" table_name_small="consultation" onmouseover="this.className=&#39;small_tab_pref2 small_tab_pref_1&#39;;" onmouseout="this.className=&#39;small_tab_pref small_tab_pref_1&#39;;">
+                    <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/exec_small.png" title="See table structure">
+                </td>
+                <td id="id_zag_upgradpg.consultation" class="tab_zag" onmousedown="cur_click=document.getElementById(&#39;upgradpg.consultation&#39;);" table_name="upgradpg.consultation" query_set="0">
+                    <span class="owner">
+                        upgradpg                    </span>
+                    consultation                </td>
+                            </tr>
+        </thead>
+        <tbody id="id_tbody_upgradpg.consultation" style="">
+                            <tr id="id_tr_consultation.id" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="consultation,id,1">
+                                        <td width="10px" colspan="3" id="upgradpg.consultation.id">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/FieldKey_small.png" alt="*">
+                                                        id : bigint(20)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_consultation.comments" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="consultation,comments,0">
+                                        <td width="10px" colspan="3" id="upgradpg.consultation.comments">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_char.png" alt="*">
+                                                        comments : varchar(255)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_consultation.suggestion" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="consultation,suggestion,0">
+                                        <td width="10px" colspan="3" id="upgradpg.consultation.suggestion">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_int.png" alt="*">
+                                                        suggestion : int(11)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_consultation.updated_on" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="consultation,updated_on,0">
+                                        <td width="10px" colspan="3" id="upgradpg.consultation.updated_on">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_date.png" alt="*">
+                                                        updated_on : date                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_consultation.doctor_id" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="consultation,doctor_id,0">
+                                        <td width="10px" colspan="3" id="upgradpg.consultation.doctor_id">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_int.png" alt="*">
+                                                        doctor_id : bigint(20)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_consultation.request_request_id" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="consultation,request_request_id,0">
+                                        <td width="10px" colspan="3" id="upgradpg.consultation.request_request_id">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_int.png" alt="*">
+                                                        request_request_id : bigint(20)                        </div>
+                    </td>
+                                    </tr>
+                    </tbody>
+    </table>
+    <input name="t_x[upgradpg.document]" type="hidden" id="t_x_upgradpg.document_">
+    <input name="t_y[upgradpg.document]" type="hidden" id="t_y_upgradpg.document_">
+    <input name="t_v[upgradpg.document]" type="hidden" id="t_v_upgradpg.document_">
+    <input name="t_h[upgradpg.document]" type="hidden" id="t_h_upgradpg.document_">
+    <!-- Why should we put styles here?! -->
+    <table id="upgradpg.document" cellpadding="0" cellspacing="0" class="pmd_tab" style="position: absolute; left: 360px; top: 314px; display: block; z-index: 1;" data-left="360" data-top="314">
+        <thead>
+            <tr class="header">
+                                <td class="small_tab" title="Show/hide columns" id="id_hide_tbody_upgradpg.document" table_name="upgradpg.document" onmouseover="this.className=&#39;small_tab2&#39;;" onmouseout="this.className=&#39;small_tab&#39;;">v</td>
+                <td class="small_tab_pref small_tab_pref_1" table_name_small="document" onmouseover="this.className=&#39;small_tab_pref2 small_tab_pref_1&#39;;" onmouseout="this.className=&#39;small_tab_pref small_tab_pref_1&#39;;">
+                    <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/exec_small.png" title="See table structure">
+                </td>
+                <td id="id_zag_upgradpg.document" class="tab_zag" onmousedown="cur_click=document.getElementById(&#39;upgradpg.document&#39;);" table_name="upgradpg.document" query_set="0">
+                    <span class="owner">
+                        upgradpg                    </span>
+                    document                </td>
+                            </tr>
+        </thead>
+        <tbody id="id_tbody_upgradpg.document" style="">
+                            <tr id="id_tr_document.id" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="document,id,1">
+                                        <td width="10px" colspan="3" id="upgradpg.document.id">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/FieldKey_small.png" alt="*">
+                                                        id : bigint(20)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_document.content_type" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="document,content_type,0">
+                                        <td width="10px" colspan="3" id="upgradpg.document.content_type">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_char.png" alt="*">
+                                                        content_type : varchar(255)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_document.file_name" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="document,file_name,0">
+                                        <td width="10px" colspan="3" id="upgradpg.document.file_name">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_char.png" alt="*">
+                                                        file_name : varchar(255)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_document.size" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="document,size,0">
+                                        <td width="10px" colspan="3" id="upgradpg.document.size">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_int.png" alt="*">
+                                                        size : bigint(20)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_document.url" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="document,url,0">
+                                        <td width="10px" colspan="3" id="upgradpg.document.url">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_char.png" alt="*">
+                                                        url : varchar(255)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_document.user_id" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="document,user_id,0">
+                                        <td width="10px" colspan="3" id="upgradpg.document.user_id">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_int.png" alt="*">
+                                                        user_id : bigint(20)                        </div>
+                    </td>
+                                    </tr>
+                    </tbody>
+    </table>
+    <input name="t_x[upgradpg.lab_result]" type="hidden" id="t_x_upgradpg.lab_result_">
+    <input name="t_y[upgradpg.lab_result]" type="hidden" id="t_y_upgradpg.lab_result_">
+    <input name="t_v[upgradpg.lab_result]" type="hidden" id="t_v_upgradpg.lab_result_">
+    <input name="t_h[upgradpg.lab_result]" type="hidden" id="t_h_upgradpg.lab_result_">
+    <!-- Why should we put styles here?! -->
+    <table id="upgradpg.lab_result" cellpadding="0" cellspacing="0" class="pmd_tab" style="position: absolute; left: 672px; top: 352px; display: block; z-index: 1;" data-left="672" data-top="352">
+        <thead>
+            <tr class="header">
+                                <td class="small_tab" title="Show/hide columns" id="id_hide_tbody_upgradpg.lab_result" table_name="upgradpg.lab_result" onmouseover="this.className=&#39;small_tab2&#39;;" onmouseout="this.className=&#39;small_tab&#39;;">v</td>
+                <td class="small_tab_pref small_tab_pref_1" table_name_small="lab_result" onmouseover="this.className=&#39;small_tab_pref2 small_tab_pref_1&#39;;" onmouseout="this.className=&#39;small_tab_pref small_tab_pref_1&#39;;">
+                    <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/exec_small.png" title="See table structure">
+                </td>
+                <td id="id_zag_upgradpg.lab_result" class="tab_zag" onmousedown="cur_click=document.getElementById(&#39;upgradpg.lab_result&#39;);" table_name="upgradpg.lab_result" query_set="0">
+                    <span class="owner">
+                        upgradpg                    </span>
+                    lab_result                </td>
+                            </tr>
+        </thead>
+        <tbody id="id_tbody_upgradpg.lab_result" style="">
+                            <tr id="id_tr_lab_result.result_id" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="lab_result,result_id,1">
+                                        <td width="10px" colspan="3" id="upgradpg.lab_result.result_id">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/FieldKey_small.png" alt="*">
+                                                        result_id : bigint(20)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_lab_result.blood_pressure" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="lab_result,blood_pressure,0">
+                                        <td width="10px" colspan="3" id="upgradpg.lab_result.blood_pressure">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_char.png" alt="*">
+                                                        blood_pressure : varchar(255)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_lab_result.comments" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="lab_result,comments,0">
+                                        <td width="10px" colspan="3" id="upgradpg.lab_result.comments">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_char.png" alt="*">
+                                                        comments : varchar(255)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_lab_result.heart_beat" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="lab_result,heart_beat,0">
+                                        <td width="10px" colspan="3" id="upgradpg.lab_result.heart_beat">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_char.png" alt="*">
+                                                        heart_beat : varchar(255)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_lab_result.oxygen_level" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="lab_result,oxygen_level,0">
+                                        <td width="10px" colspan="3" id="upgradpg.lab_result.oxygen_level">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_char.png" alt="*">
+                                                        oxygen_level : varchar(255)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_lab_result.result" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="lab_result,result,0">
+                                        <td width="10px" colspan="3" id="upgradpg.lab_result.result">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_int.png" alt="*">
+                                                        result : int(11)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_lab_result.temperature" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="lab_result,temperature,0">
+                                        <td width="10px" colspan="3" id="upgradpg.lab_result.temperature">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_char.png" alt="*">
+                                                        temperature : varchar(255)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_lab_result.updated_on" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="lab_result,updated_on,0">
+                                        <td width="10px" colspan="3" id="upgradpg.lab_result.updated_on">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_date.png" alt="*">
+                                                        updated_on : date                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_lab_result.request_request_id" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="lab_result,request_request_id,0">
+                                        <td width="10px" colspan="3" id="upgradpg.lab_result.request_request_id">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_int.png" alt="*">
+                                                        request_request_id : bigint(20)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_lab_result.tester_id" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="lab_result,tester_id,0">
+                                        <td width="10px" colspan="3" id="upgradpg.lab_result.tester_id">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_int.png" alt="*">
+                                                        tester_id : bigint(20)                        </div>
+                    </td>
+                                    </tr>
+                    </tbody>
+    </table>
+    <input name="t_x[upgradpg.role]" type="hidden" id="t_x_upgradpg.role_">
+    <input name="t_y[upgradpg.role]" type="hidden" id="t_y_upgradpg.role_">
+    <input name="t_v[upgradpg.role]" type="hidden" id="t_v_upgradpg.role_">
+    <input name="t_h[upgradpg.role]" type="hidden" id="t_h_upgradpg.role_">
+    <!-- Why should we put styles here?! -->
+    <table id="upgradpg.role" cellpadding="0" cellspacing="0" class="pmd_tab" style="position: absolute; left: 67px; top: 361px; display: block; z-index: 1;" data-left="67" data-top="361">
+        <thead>
+            <tr class="header">
+                                <td class="small_tab" title="Show/hide columns" id="id_hide_tbody_upgradpg.role" table_name="upgradpg.role" onmouseover="this.className=&#39;small_tab2&#39;;" onmouseout="this.className=&#39;small_tab&#39;;">v</td>
+                <td class="small_tab_pref small_tab_pref_1" table_name_small="role" onmouseover="this.className=&#39;small_tab_pref2 small_tab_pref_1&#39;;" onmouseout="this.className=&#39;small_tab_pref small_tab_pref_1&#39;;">
+                    <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/exec_small.png" title="See table structure">
+                </td>
+                <td id="id_zag_upgradpg.role" class="tab_zag" onmousedown="cur_click=document.getElementById(&#39;upgradpg.role&#39;);" table_name="upgradpg.role" query_set="0">
+                    <span class="owner">
+                        upgradpg                    </span>
+                    role                </td>
+                            </tr>
+        </thead>
+        <tbody id="id_tbody_upgradpg.role" style="">
+                            <tr id="id_tr_role.id" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="role,id,1">
+                                        <td width="10px" colspan="3" id="upgradpg.role.id">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/FieldKey_small.png" alt="*">
+                                                        id : bigint(20)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_role.description" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="role,description,0">
+                                        <td width="10px" colspan="3" id="upgradpg.role.description">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_char.png" alt="*">
+                                                        description : varchar(255)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_role.name" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="role,name,1">
+                                        <td width="10px" colspan="3" id="upgradpg.role.name">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/FieldKey_small.png" alt="*">
+                                                        name : varchar(255)                        </div>
+                    </td>
+                                    </tr>
+                    </tbody>
+    </table>
+    <input name="t_x[upgradpg.test_positive_count_threshold]" type="hidden" id="t_x_upgradpg.test_positive_count_threshold_">
+    <input name="t_y[upgradpg.test_positive_count_threshold]" type="hidden" id="t_y_upgradpg.test_positive_count_threshold_">
+    <input name="t_v[upgradpg.test_positive_count_threshold]" type="hidden" id="t_v_upgradpg.test_positive_count_threshold_">
+    <input name="t_h[upgradpg.test_positive_count_threshold]" type="hidden" id="t_h_upgradpg.test_positive_count_threshold_">
+    <!-- Why should we put styles here?! -->
+    <table id="upgradpg.test_positive_count_threshold" cellpadding="0" cellspacing="0" class="pmd_tab" style="position: absolute; left: 291px; top: 512px; display: block; z-index: 1;" data-left="291" data-top="512">
+        <thead>
+            <tr class="header">
+                                <td class="small_tab" title="Show/hide columns" id="id_hide_tbody_upgradpg.test_positive_count_threshold" table_name="upgradpg.test_positive_count_threshold" onmouseover="this.className=&#39;small_tab2&#39;;" onmouseout="this.className=&#39;small_tab&#39;;">v</td>
+                <td class="small_tab_pref small_tab_pref_1" table_name_small="test_positive_count_threshold" onmouseover="this.className=&#39;small_tab_pref2 small_tab_pref_1&#39;;" onmouseout="this.className=&#39;small_tab_pref small_tab_pref_1&#39;;">
+                    <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/exec_small.png" title="See table structure">
+                </td>
+                <td id="id_zag_upgradpg.test_positive_count_threshold" class="tab_zag" onmousedown="cur_click=document.getElementById(&#39;upgradpg.test_positive_count_threshold&#39;);" table_name="upgradpg.test_positive_count_threshold" query_set="0">
+                    <span class="owner">
+                        upgradpg                    </span>
+                    test_positive_count_threshold                </td>
+                            </tr>
+        </thead>
+        <tbody id="id_tbody_upgradpg.test_positive_count_threshold" style="">
+                            <tr id="id_tr_test_positive_count_threshold.threshold_type" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="test_positive_count_threshold,threshold_type,1">
+                                        <td width="10px" colspan="3" id="upgradpg.test_positive_count_threshold.threshold_type">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/FieldKey_small.png" alt="*">
+                                                        threshold_type : int(11)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_test_positive_count_threshold.max_limit" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="test_positive_count_threshold,max_limit,0">
+                                        <td width="10px" colspan="3" id="upgradpg.test_positive_count_threshold.max_limit">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_int.png" alt="*">
+                                                        max_limit : int(11)                        </div>
+                    </td>
+                                    </tr>
+                    </tbody>
+    </table>
+    <input name="t_x[upgradpg.test_request]" type="hidden" id="t_x_upgradpg.test_request_">
+    <input name="t_y[upgradpg.test_request]" type="hidden" id="t_y_upgradpg.test_request_">
+    <input name="t_v[upgradpg.test_request]" type="hidden" id="t_v_upgradpg.test_request_">
+    <input name="t_h[upgradpg.test_request]" type="hidden" id="t_h_upgradpg.test_request_">
+    <!-- Why should we put styles here?! -->
+    <table id="upgradpg.test_request" cellpadding="0" cellspacing="0" class="pmd_tab" style="position: absolute; left: 358px; top: 20px; display: block; z-index: 1;" data-left="358" data-top="20">
+        <thead>
+            <tr class="header">
+                                <td class="small_tab" title="Show/hide columns" id="id_hide_tbody_upgradpg.test_request" table_name="upgradpg.test_request" onmouseover="this.className=&#39;small_tab2&#39;;" onmouseout="this.className=&#39;small_tab&#39;;">v</td>
+                <td class="small_tab_pref small_tab_pref_1" table_name_small="test_request" onmouseover="this.className=&#39;small_tab_pref2 small_tab_pref_1&#39;;" onmouseout="this.className=&#39;small_tab_pref small_tab_pref_1&#39;;">
+                    <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/exec_small.png" title="See table structure">
+                </td>
+                <td id="id_zag_upgradpg.test_request" class="tab_zag" onmousedown="cur_click=document.getElementById(&#39;upgradpg.test_request&#39;);" table_name="upgradpg.test_request" query_set="0">
+                    <span class="owner">
+                        upgradpg                    </span>
+                    test_request                </td>
+                            </tr>
+        </thead>
+        <tbody id="id_tbody_upgradpg.test_request" style="">
+                            <tr id="id_tr_test_request.request_id" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="test_request,request_id,1">
+                                        <td width="10px" colspan="3" id="upgradpg.test_request.request_id">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/FieldKey_small.png" alt="*">
+                                                        request_id : bigint(20)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_test_request.address" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="test_request,address,0">
+                                        <td width="10px" colspan="3" id="upgradpg.test_request.address">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_char.png" alt="*">
+                                                        address : varchar(255)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_test_request.age" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="test_request,age,0">
+                                        <td width="10px" colspan="3" id="upgradpg.test_request.age">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_int.png" alt="*">
+                                                        age : int(11)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_test_request.created" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="test_request,created,0">
+                                        <td width="10px" colspan="3" id="upgradpg.test_request.created">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_date.png" alt="*">
+                                                        created : date                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_test_request.email" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="test_request,email,0">
+                                        <td width="10px" colspan="3" id="upgradpg.test_request.email">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_char.png" alt="*">
+                                                        email : varchar(255)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_test_request.gender" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="test_request,gender,0">
+                                        <td width="10px" colspan="3" id="upgradpg.test_request.gender">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_int.png" alt="*">
+                                                        gender : int(11)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_test_request.name" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="test_request,name,0">
+                                        <td width="10px" colspan="3" id="upgradpg.test_request.name">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_char.png" alt="*">
+                                                        name : varchar(255)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_test_request.phone_number" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="test_request,phone_number,0">
+                                        <td width="10px" colspan="3" id="upgradpg.test_request.phone_number">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_char.png" alt="*">
+                                                        phone_number : varchar(255)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_test_request.pin_code" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="test_request,pin_code,0">
+                                        <td width="10px" colspan="3" id="upgradpg.test_request.pin_code">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_int.png" alt="*">
+                                                        pin_code : int(11)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_test_request.status" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="test_request,status,0">
+                                        <td width="10px" colspan="3" id="upgradpg.test_request.status">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_int.png" alt="*">
+                                                        status : int(11)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_test_request.created_by_id" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="test_request,created_by_id,0">
+                                        <td width="10px" colspan="3" id="upgradpg.test_request.created_by_id">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_int.png" alt="*">
+                                                        created_by_id : bigint(20)                        </div>
+                    </td>
+                                    </tr>
+                    </tbody>
+    </table>
+    <input name="t_x[upgradpg.test_request_flow]" type="hidden" id="t_x_upgradpg.test_request_flow_">
+    <input name="t_y[upgradpg.test_request_flow]" type="hidden" id="t_y_upgradpg.test_request_flow_">
+    <input name="t_v[upgradpg.test_request_flow]" type="hidden" id="t_v_upgradpg.test_request_flow_">
+    <input name="t_h[upgradpg.test_request_flow]" type="hidden" id="t_h_upgradpg.test_request_flow_">
+    <!-- Why should we put styles here?! -->
+    <table id="upgradpg.test_request_flow" cellpadding="0" cellspacing="0" class="pmd_tab" style="position: absolute; left: 670px; top: 18px; display: block; z-index: 1;" data-left="670" data-top="18">
+        <thead>
+            <tr class="header">
+                                <td class="small_tab" title="Show/hide columns" id="id_hide_tbody_upgradpg.test_request_flow" table_name="upgradpg.test_request_flow" onmouseover="this.className=&#39;small_tab2&#39;;" onmouseout="this.className=&#39;small_tab&#39;;">v</td>
+                <td class="small_tab_pref small_tab_pref_1" table_name_small="test_request_flow" onmouseover="this.className=&#39;small_tab_pref2 small_tab_pref_1&#39;;" onmouseout="this.className=&#39;small_tab_pref small_tab_pref_1&#39;;">
+                    <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/exec_small.png" title="See table structure">
+                </td>
+                <td id="id_zag_upgradpg.test_request_flow" class="tab_zag" onmousedown="cur_click=document.getElementById(&#39;upgradpg.test_request_flow&#39;);" table_name="upgradpg.test_request_flow" query_set="0">
+                    <span class="owner">
+                        upgradpg                    </span>
+                    test_request_flow                </td>
+                            </tr>
+        </thead>
+        <tbody id="id_tbody_upgradpg.test_request_flow" style="">
+                            <tr id="id_tr_test_request_flow.id" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="test_request_flow,id,1">
+                                        <td width="10px" colspan="3" id="upgradpg.test_request_flow.id">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/FieldKey_small.png" alt="*">
+                                                        id : bigint(20)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_test_request_flow.from_status" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="test_request_flow,from_status,0">
+                                        <td width="10px" colspan="3" id="upgradpg.test_request_flow.from_status">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_int.png" alt="*">
+                                                        from_status : int(11)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_test_request_flow.happened_on" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="test_request_flow,happened_on,0">
+                                        <td width="10px" colspan="3" id="upgradpg.test_request_flow.happened_on">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_date.png" alt="*">
+                                                        happened_on : date                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_test_request_flow.to_status" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="test_request_flow,to_status,0">
+                                        <td width="10px" colspan="3" id="upgradpg.test_request_flow.to_status">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_int.png" alt="*">
+                                                        to_status : int(11)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_test_request_flow.changed_by_id" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="test_request_flow,changed_by_id,0">
+                                        <td width="10px" colspan="3" id="upgradpg.test_request_flow.changed_by_id">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_int.png" alt="*">
+                                                        changed_by_id : bigint(20)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_test_request_flow.request_request_id" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="test_request_flow,request_request_id,0">
+                                        <td width="10px" colspan="3" id="upgradpg.test_request_flow.request_request_id">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_int.png" alt="*">
+                                                        request_request_id : bigint(20)                        </div>
+                    </td>
+                                    </tr>
+                    </tbody>
+    </table>
+    <input name="t_x[upgradpg.user]" type="hidden" id="t_x_upgradpg.user_">
+    <input name="t_y[upgradpg.user]" type="hidden" id="t_y_upgradpg.user_">
+    <input name="t_v[upgradpg.user]" type="hidden" id="t_v_upgradpg.user_">
+    <input name="t_h[upgradpg.user]" type="hidden" id="t_h_upgradpg.user_">
+    <!-- Why should we put styles here?! -->
+    <table id="upgradpg.user" cellpadding="0" cellspacing="0" class="pmd_tab" style="position: absolute; left: 64px; top: 25px; display: block; z-index: 1;" data-left="64" data-top="25">
+        <thead>
+            <tr class="header">
+                                <td class="small_tab" title="Show/hide columns" id="id_hide_tbody_upgradpg.user" table_name="upgradpg.user" onmouseover="this.className=&#39;small_tab2&#39;;" onmouseout="this.className=&#39;small_tab&#39;;">v</td>
+                <td class="small_tab_pref small_tab_pref_1" table_name_small="user" onmouseover="this.className=&#39;small_tab_pref2 small_tab_pref_1&#39;;" onmouseout="this.className=&#39;small_tab_pref small_tab_pref_1&#39;;">
+                    <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/exec_small.png" title="See table structure">
+                </td>
+                <td id="id_zag_upgradpg.user" class="tab_zag" onmousedown="cur_click=document.getElementById(&#39;upgradpg.user&#39;);" table_name="upgradpg.user" query_set="0">
+                    <span class="owner">
+                        upgradpg                    </span>
+                    user                </td>
+                            </tr>
+        </thead>
+        <tbody id="id_tbody_upgradpg.user" style="">
+                            <tr id="id_tr_user.id" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="user,id,1">
+                                        <td width="10px" colspan="3" id="upgradpg.user.id">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/FieldKey_small.png" alt="*">
+                                                        id : bigint(20)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_user.address" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="user,address,0">
+                                        <td width="10px" colspan="3" id="upgradpg.user.address">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_char.png" alt="*">
+                                                        address : varchar(255)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_user.created" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="user,created,0">
+                                        <td width="10px" colspan="3" id="upgradpg.user.created">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_date.png" alt="*">
+                                                        created : datetime                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_user.date_of_birth" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="user,date_of_birth,0">
+                                        <td width="10px" colspan="3" id="upgradpg.user.date_of_birth">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_date.png" alt="*">
+                                                        date_of_birth : date                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_user.email" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="user,email,1">
+                                        <td width="10px" colspan="3" id="upgradpg.user.email">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/FieldKey_small.png" alt="*">
+                                                        email : varchar(255)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_user.first_name" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="user,first_name,0">
+                                        <td width="10px" colspan="3" id="upgradpg.user.first_name">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_char.png" alt="*">
+                                                        first_name : varchar(255)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_user.gender" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="user,gender,0">
+                                        <td width="10px" colspan="3" id="upgradpg.user.gender">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_int.png" alt="*">
+                                                        gender : int(11)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_user.last_name" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="user,last_name,0">
+                                        <td width="10px" colspan="3" id="upgradpg.user.last_name">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_char.png" alt="*">
+                                                        last_name : varchar(255)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_user.password" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="user,password,0">
+                                        <td width="10px" colspan="3" id="upgradpg.user.password">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_char.png" alt="*">
+                                                        password : varchar(255)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_user.phone_number" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="user,phone_number,1">
+                                        <td width="10px" colspan="3" id="upgradpg.user.phone_number">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/FieldKey_small.png" alt="*">
+                                                        phone_number : varchar(255)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_user.pin_code" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="user,pin_code,0">
+                                        <td width="10px" colspan="3" id="upgradpg.user.pin_code">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_int.png" alt="*">
+                                                        pin_code : int(11)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_user.status" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="user,status,0">
+                                        <td width="10px" colspan="3" id="upgradpg.user.status">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_int.png" alt="*">
+                                                        status : int(11)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_user.updated" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="user,updated,0">
+                                        <td width="10px" colspan="3" id="upgradpg.user.updated">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/Field_small_date.png" alt="*">
+                                                        updated : datetime                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_user.user_name" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="user,user_name,1">
+                                        <td width="10px" colspan="3" id="upgradpg.user.user_name">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/FieldKey_small.png" alt="*">
+                                                        user_name : varchar(255)                        </div>
+                    </td>
+                                    </tr>
+                    </tbody>
+    </table>
+    <input name="t_x[upgradpg.user_roles]" type="hidden" id="t_x_upgradpg.user_roles_">
+    <input name="t_y[upgradpg.user_roles]" type="hidden" id="t_y_upgradpg.user_roles_">
+    <input name="t_v[upgradpg.user_roles]" type="hidden" id="t_v_upgradpg.user_roles_">
+    <input name="t_h[upgradpg.user_roles]" type="hidden" id="t_h_upgradpg.user_roles_">
+    <!-- Why should we put styles here?! -->
+    <table id="upgradpg.user_roles" cellpadding="0" cellspacing="0" class="pmd_tab" style="position: absolute; left: 62px; top: 476px; display: block; z-index: 1;" data-left="62" data-top="476">
+        <thead>
+            <tr class="header">
+                                <td class="small_tab" title="Show/hide columns" id="id_hide_tbody_upgradpg.user_roles" table_name="upgradpg.user_roles" onmouseover="this.className=&#39;small_tab2&#39;;" onmouseout="this.className=&#39;small_tab&#39;;">v</td>
+                <td class="small_tab_pref small_tab_pref_1" table_name_small="user_roles" onmouseover="this.className=&#39;small_tab_pref2 small_tab_pref_1&#39;;" onmouseout="this.className=&#39;small_tab_pref small_tab_pref_1&#39;;">
+                    <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/exec_small.png" title="See table structure">
+                </td>
+                <td id="id_zag_upgradpg.user_roles" class="tab_zag" onmousedown="cur_click=document.getElementById(&#39;upgradpg.user_roles&#39;);" table_name="upgradpg.user_roles" query_set="0">
+                    <span class="owner">
+                        upgradpg                    </span>
+                    user_roles                </td>
+                            </tr>
+        </thead>
+        <tbody id="id_tbody_upgradpg.user_roles" style="">
+                            <tr id="id_tr_user_roles.user_id" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="user_roles,user_id,1">
+                                        <td width="10px" colspan="3" id="upgradpg.user_roles.user_id">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/FieldKey_small.png" alt="*">
+                                                        user_id : bigint(20)                        </div>
+                    </td>
+                                    </tr>
+                            <tr id="id_tr_user_roles.roles_id" class="tab_field" onmouseover="old_class = this.className; this.className = &#39;tab_field_2&#39;;" onmouseout="this.className = old_class;" click_field_param="user_roles,roles_id,1">
+                                        <td width="10px" colspan="3" id="upgradpg.user_roles.roles_id">
+                        <div class="nowrap">
+                                                            <img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/FieldKey_small.png" alt="*">
+                                                        roles_id : bigint(20)                        </div>
+                    </td>
+                                    </tr>
+                    </tbody>
+    </table>
+</form></div><div id="pmd_hint"></div><table id="layer_new_relation" style="display:none;" width="5%" cellpadding="0" cellspacing="0">
+    <tbody>
+        <tr>
+            <td class="frams1" width="10px">
+            </td>
+            <td class="frams5" width="99%">
+            </td>
+            <td class="frams2" width="10px">
+                <div class="bor">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="frams8">
+            </td>
+            <td class="input_tab">
+                <table width="168" class="center" cellpadding="2" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <td colspan="2" class="center nowrap">
+                                <strong>
+                                    Create relation                                </strong>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody id="foreign_relation">
+                        <tr>
+                            <td colspan="2" class="center nowrap">
+                                <strong>
+                                    FOREIGN KEY
+                                </strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="58" class="nowrap">
+                                on delete
+                            </td>
+                            <td width="102">
+                                <select name="on_delete" id="on_delete">
+                                    <option value="nix" selected="selected">
+                                        --
+                                    </option>
+                                    <option value="CASCADE">
+                                        CASCADE
+                                    </option>
+                                    <option value="SET NULL">
+                                        SET NULL
+                                    </option>
+                                    <option value="NO ACTION">
+                                        NO ACTION
+                                    </option>
+                                    <option value="RESTRICT">
+                                        RESTRICT
+                                    </option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="nowrap">
+                                on update
+                            </td>
+                            <td>
+                                <select name="on_update" id="on_update">
+                                    <option value="nix" selected="selected">
+                                        --
+                                    </option>
+                                    <option value="CASCADE">
+                                        CASCADE
+                                    </option>
+                                    <option value="SET NULL">
+                                        SET NULL
+                                    </option>
+                                    <option value="NO ACTION">
+                                        NO ACTION
+                                    </option>
+                                    <option value="RESTRICT">
+                                        RESTRICT
+                                    </option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td colspan="2" class="center nowrap">
+                                <input type="button" id="ok_new_rel_panel" class="butt" name="Button" value="OK">
+                                <input type="button" id="cancel_new_rel_panel" class="butt" name="Button" value="Cancel">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+            <td class="frams6">
+            </td>
+        </tr>
+        <tr>
+            <td class="frams4">
+                <div class="bor">
+                </div>
+            </td>
+            <td class="frams7">
+            </td>
+            <td class="frams3">
+            </td>
+        </tr>
+    </tbody>
+</table><table id="layer_upd_relation" style="display:none;" width="5%" cellpadding="0" cellspacing="0">
+    <tbody>
+        <tr>
+            <td class="frams1" width="10px">
+            </td>
+            <td class="frams5" width="99%">
+            </td>
+            <td class="frams2" width="10px">
+                <div class="bor">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="frams8">
+            </td>
+            <td class="input_tab">
+                <table width="100%" class="center" cellpadding="2" cellspacing="0">
+                    <tbody><tr>
+                        <td colspan="3" class="center nowrap">
+                            <strong>
+                                Delete relation                            </strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="center nowrap">
+                            <input id="del_button" name="Button" type="button" class="butt" value="Delete">
+                            <input id="cancel_button" type="button" class="butt" name="Button" value="Cancel">
+                        </td>
+                    </tr>
+                </tbody></table>
+            </td>
+            <td class="frams6">
+            </td>
+        </tr>
+        <tr>
+            <td class="frams4">
+                <div class="bor">
+                </div>
+            </td>
+            <td class="frams7">
+            </td>
+            <td class="frams3">
+            </td>
+        </tr>
+    </tbody>
+</table><div id="PMA_disable_floating_menubar"></div></div><div id="selflink" class="print_ignore" style="display: none;"><a href="http://localhost/phpmyadmin/db_designer.php?db=upgradpg&amp;table=&amp;server=1&amp;target=&amp;token=e9058a1070a7b50aac79bd94f80b6d0a" title="Open new phpMyAdmin window" target="_blank" rel="noopener noreferrer"><img src="./localhost _ localhost _ upgradpg _ phpMyAdmin 4.6.6deb5_files/dot.gif" title="Open new phpMyAdmin window" alt="Open new phpMyAdmin window" class="icon ic_window-new"></a></div><div id="pma_footer"></div></body></html>

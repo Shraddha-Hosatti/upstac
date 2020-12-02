@@ -1,0 +1,193 @@
+version: '2'
+
+volumes:
+  orderer.upstac.com:
+  peer0.hospitalA.upstac.com:
+  peer1.hospitalA.upstac.com:
+  peer0.hospitalB.upstac.com:
+  peer1.hospitalB.upstac.com:
+  peer0.government.upstac.com:
+  peer1.government.upstac.com:
+
+
+networks:
+  registration:
+
+services:
+
+  ca.hospitalA.upstac.com:
+    image: hyperledger/fabric-ca:1.4.3
+    environment:
+      - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
+      - FABRIC_CA_SERVER_CA_NAME=ca.hospitalA.upstac.com
+      - FABRIC_CA_SERVER_TLS_ENABLED=true
+      - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.hospitalA.upstac.com-cert.pem
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/HOSPITALA_CA_PRIVATE_KEY
+      - FABRIC_CA_SERVER_PORT=7054
+    ports:
+      - "7054:7054"
+    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.hospitalA.upstac.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/HOSPITALA_CA_PRIVATE_KEY -b admin:adminpw -d'
+    volumes:
+      - ./crypto-config/peerOrganizations/hospitalA.upstac.com/ca/:/etc/hyperledger/fabric-ca-server-config
+    container_name: ca.hospitalA.upstac.com
+    networks:
+      - registration
+
+  ca.hospitalB.upstac.com:
+    image: hyperledger/fabric-ca:1.4.3
+    environment:
+      - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
+      - FABRIC_CA_SERVER_CA_NAME=ca.hospitalB.upstac.com
+      - FABRIC_CA_SERVER_TLS_ENABLED=true
+      - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.hospitalB.upstac.com-cert.pem
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/HOSPITALB_CA_PRIVATE_KEY
+      - FABRIC_CA_SERVER_PORT=8054
+    ports:
+      - "8054:8054"
+    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.hospitalB.upstac.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/HOSPITALB_CA_PRIVATE_KEY -b admin:adminpw -d'
+    volumes:
+      - ./crypto-config/peerOrganizations/hospitalB.upstac.com/ca/:/etc/hyperledger/fabric-ca-server-config
+    container_name: ca.hospitalB.upstac.com
+    networks:
+      - registration
+
+  ca.government.upstac.com:
+    image: hyperledger/fabric-ca:1.4.3
+    environment:
+      - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
+      - FABRIC_CA_SERVER_CA_NAME=ca.government.upstac.com
+      - FABRIC_CA_SERVER_TLS_ENABLED=true
+      - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.government.upstac.com-cert.pem
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/GOVERNMENT_CA_PRIVATE_KEY
+      - FABRIC_CA_SERVER_PORT=9054
+    ports:
+      - "9054:9054"
+    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.government.upstac.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/GOVERNMENT_CA_PRIVATE_KEY -b admin:adminpw -d'
+    volumes:
+      - ./crypto-config/peerOrganizations/government.upstac.com/ca/:/etc/hyperledger/fabric-ca-server-config
+    container_name: ca.government.upstac.com
+    networks:
+      - registration
+
+  orderer.upstac.com:
+    extends:
+      file:   docker-base/docker-compose-base.yaml
+      service: orderer.upstac.com
+    container_name: orderer.upstac.com
+    networks:
+      - registration
+
+  peer0.hospitalA.upstac.com:
+    container_name: peer0.hospitalA.upstac.com
+    extends:
+      file:  docker-base/docker-compose-base.yaml
+      service: peer0.hospitalA.upstac.com
+    networks:
+      - registration
+
+  peer1.hospitalA.upstac.com:
+    container_name: peer1.hospitalA.upstac.com
+    extends:
+      file:  docker-base/docker-compose-base.yaml
+      service: peer1.hospitalA.upstac.com
+    networks:
+      - registration
+
+  peer0.hospitalB.upstac.com:
+    container_name: peer0.hospitalB.upstac.com
+    extends:
+      file:  docker-base/docker-compose-base.yaml
+      service: peer0.hospitalB.upstac.com
+    networks:
+      - registration
+
+  peer1.hospitalB.upstac.com:
+    container_name: peer1.hospitalB.upstac.com
+    extends:
+      file:  docker-base/docker-compose-base.yaml
+      service: peer1.hospitalB.upstac.com
+    networks:
+      - registration
+
+  peer0.government.upstac.com:
+    container_name: peer0.government.upstac.com
+    extends:
+      file:  docker-base/docker-compose-base.yaml
+      service: peer0.government.upstac.com
+    networks:
+      - registration
+  
+  peer1.government.upstac.com:
+    container_name: peer1.government.upstac.com
+    extends:
+      file:  docker-base/docker-compose-base.yaml
+      service: peer1.government.upstac.com
+    networks:
+      - registration
+
+  cli:
+    container_name: cli
+    image: hyperledger/fabric-tools:1.4.3
+    tty: true
+    stdin_open: true
+    environment:
+      - GOPATH=/opt/gopath
+      - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
+      - FABRIC_LOGGING_SPEC=INFO
+      - CORE_PEER_ID=cli
+      - CORE_PEER_ADDRESS=peer0.hospitalA.upstac.com:7051
+      - CORE_PEER_LOCALMSPID=hospitalAMSP
+      - CORE_PEER_TLS_ENABLED=true
+      - CORE_PEER_TLS_CERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/hospitalA.upstac.com/peers/peer0.hospitalA.upstac.com/tls/server.crt
+      - CORE_PEER_TLS_KEY_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/hospitalA.upstac.com/peers/peer0.hospitalA.upstac.com/tls/server.key
+      - CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/hospitalA.upstac.com/peers/peer0.hospitalA.upstac.com/tls/ca.crt
+      - CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/hospitalA.upstac.com/users/Admin@hospitalA.upstac.com/msp
+    working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
+    command: /bin/bash
+    volumes:
+      - /var/run/:/host/var/run/
+      - ./../chaincode/:/opt/gopath/src/github.com/hyperledger/fabric/peer/chaincode/
+      - ./crypto-config:/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/
+      - ./scripts:/opt/gopath/src/github.com/hyperledger/fabric/peer/scripts/
+      - ./channel-artifacts:/opt/gopath/src/github.com/hyperledger/fabric/peer/channel-artifacts
+    depends_on:
+      - ca.hospitalA.upstac.com
+      - ca.hospitalB.upstac.com
+      - ca.government.upstac.com
+      - orderer.upstac.com
+      - peer0.hospitalA.upstac.com
+      - peer1.hospitalA.upstac.com
+      - peer0.hospitalB.upstac.com
+      - peer1.hospitalB.upstac.com
+      - peer0.government.upstac.com
+      - peer1.government.upstac.com
+
+
+    networks:
+      - registration
+
+  chaincode:
+    container_name: chaincode
+    image: hyperledger/fabric-ccenv:1.4.3
+    tty: true
+    environment:
+      - GOPATH=/opt/gopath
+      - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
+      - FABRIC_LOGGING_SPEC=INFO
+      - CORE_PEER_ID=chaincode
+      - CORE_PEER_ADDRESS=peer0.hospitalA.upstac.com:7051
+      - CORE_PEER_LOCALMSPID=hospitalAMSP
+      - CORE_PEER_TLS_ENABLED=true
+      - CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/crypto/peerOrganizations/hospitalA.upstac.com/users/Admin@hospitalA.upstac.com/msp
+      - CORE_TLS_CLIENT_KEY_PATH=/opt/gopath/src/crypto/peerOrganizations/hospitalA.upstac.com/users/Admin@hospitalA.upstac.com/tls/client.key
+      - CORE_TLS_CLIENT_CERT_PATH=/opt/gopath/src/crypto/peerOrganizations/hospitalA.upstac.com/users/Admin@hospitalA.upstac.com/tls/client.crt
+      - CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/crypto/peerOrganizations/hospitalA.upstac.com/users/Admin@hospitalA.upstac.com/tls/ca.crt
+    working_dir: /opt/gopath/src/chaincode
+    command: /bin/bash -c 'sleep 6000000'
+    volumes:
+      - /var/run/:/host/var/run/
+      - ./../chaincode:/opt/gopath/src/chaincode
+      - ./crypto-config:/opt/gopath/src/crypto
+    networks:
+      - registration
+

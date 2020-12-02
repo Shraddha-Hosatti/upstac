@@ -1,0 +1,197 @@
+Organizations:
+  - &OrdererOrg
+    Name: Orderer
+    ID: OrdererMSP
+    MSPDir: crypto-config/ordererOrganizations/upstac.com/msp
+    Policies:
+      Readers:
+        Type: Signature
+        Rule: "OR('OrdererMSP.member')"
+      Writers:
+        Type: Signature
+        Rule: "OR('OrdererMSP.member')"
+      Admins:
+        Type: Signature
+        Rule: "OR('OrdererMSP.member')"
+
+  - &hospitalA
+    Name: hospitalAMSP
+    ID: hospitalAMSP
+    MSPDir: ../crypto-config/peerOrganizations/hospitalA.upstac.com/msp
+    Policies:
+      Readers:
+        Type: Signature
+        Rule: "OR('hospitalAMSP.admin', 'hospitalAMSP.peer', 'hospitalAMSP.client')"
+      Writers:
+        Type: Signature
+        Rule: "OR('hospitalAMSP.admin', 'hospitalAMSP.peer', 'hospitalAMSP.client')"
+      Admins:
+        Type: Signature
+        Rule: "OR('hospitalAMSP.admin', 'hospitalAMSP.peer', 'hospitalAMSP.client')"
+    AnchorPeers:
+      - Host: peer0.hospitalA.upstac.com
+        Port: 7051
+  
+  - &insurance
+    Name: insuranceMSP
+    ID: insuranceMSP
+    MSPDir: crypto-config/peerOrganizations/insurance.upstac.com/msp
+    Policies:
+      Readers:
+        Type: Signature
+        Rule: "OR('insuranceMSP.admin', 'insuranceMSP.peer', 'insuranceMSP.client')"
+      Writers:
+        Type: Signature
+        Rule: "OR('insuranceMSP.admin', 'insuranceMSP.peer', 'insuranceMSP.client')"
+      Admins:
+        Type: Signature
+        Rule: "OR('insuranceMSP.admin', 'insuranceMSP.peer', 'insuranceMSP.client')"
+    AnchorPeers:
+      - Host: peer0.insurance.upstac.com
+        Port: 21051
+
+  - &hospitalB
+    Name: hospitalBMSP
+    ID: hospitalBMSP
+    MSPDir: ../crypto-config/peerOrganizations/hospitalB.upstac.com/msp
+    Policies:
+      Readers:
+        Type: Signature
+        Rule: "OR('hospitalBMSP.admin', 'hospitalBMSP.peer', 'hospitalBMSP.client')"
+      Writers:
+        Type: Signature
+        Rule: "OR('hospitalBMSP.admin', 'hospitalBMSP.peer', 'hospitalBMSP.client')"
+      Admins:
+        Type: Signature
+        Rule: "OR('hospitalBMSP.admin', 'hospitalBMSP.peer', 'hospitalBMSP.client')"
+    AnchorPeers:
+      - Host: peer0.hospitalB.upstac.com
+        Port: 9051
+
+  - &government
+    Name: governmentMSP
+    ID: governmentMSP
+    MSPDir: ../crypto-config/peerOrganizations/government.upstac.com/msp
+    Policies:
+      Readers:
+        Type: Signature
+        Rule: "OR('governmentMSP.admin', 'governmentMSP.peer', 'governmentMSP.client')"
+      Writers:
+        Type: Signature
+        Rule: "OR('governmentMSP.admin', 'governmentMSP.peer', 'governmentMSP.client')"
+      Admins:
+        Type: Signature
+        Rule: "OR('governmentMSP.admin', 'governmentMSP.peer', 'governmentMSP.client')"
+    AnchorPeers:
+      - Host: peer0.government.upstac.com
+        Port: 11051
+
+  
+#Capabilities
+
+Capabilities:
+  Channel: &ChannelCapabilities
+    V1_4_3: true
+    V1_3: false
+    V1_1: false
+  Orderer: &OrdererCapabilities
+    V1_4_2: true
+    V1_1: false
+  Application: &ApplicationCapabilities
+    V1_4_2: true
+    V1_3: false
+    V1_2: false
+    V1_1: false
+
+#Application
+
+Application: &ApplicationDefaults
+  Organizations:
+  Policies: &ApplicationDefaultPolicies
+    Readers:
+      Type: ImplicitMeta
+      Rule: "ANY Readers"
+    Writers:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+    Admins:
+      Type: ImplicitMeta
+      Rule: "ANY Admins"
+  Capabilities: *ApplicationCapabilities
+
+#Orderer
+Orderer: &OrdererDefaults
+  OrdererType: solo
+  Addresses:
+    - orderer.upstac.com:7050
+  BatchTimeout: 2s
+  BatchSize:
+    MaxMessageCount: 10
+    AbsoluteMaxBytes: 99 MB
+    PreferredMaxBytes: 512 KB
+  Organizations:
+  Capabilities: *OrdererCapabilities
+  Policies:
+    Readers:
+      Type: ImplicitMeta
+      Rule: "ANY Readers"
+    Writers:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+    Admins:
+      Type: ImplicitMeta
+      Rule: "ANY Admins"
+    # BlockValidation specifies what signatures must be included in the block
+    # from the orderer for the peer to validate it.
+    BlockValidation:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+
+
+Channel: &ChannelDefaults
+  Policies:
+    # Who may invoke the 'Deliver' API
+    Readers:
+      Type: ImplicitMeta
+      Rule: "ANY Readers"
+    # Who may invoke the 'Broadcast' API
+    Writers:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+    # By default, who may modify elements at this config level
+    Admins:
+      Type: ImplicitMeta
+      Rule: "ANY Admins"
+  Capabilities:
+    <<: *ChannelCapabilities
+
+
+#Profiles
+Profiles:
+  OrdererGenesisInsurance:
+    <<: *ChannelDefaults
+    Capabilities:
+      <<: *ChannelCapabilities
+    Orderer:
+      <<: *OrdererDefaults
+      Organizations:
+        - *OrdererOrg
+      Capabilities:
+        <<: *OrdererCapabilities
+    Consortiums:
+      UPSTACConsortium:
+        Organizations:
+          - *hospitalA
+          - *hospitalB
+          - *government
+
+  insurance-hospitala:
+    Consortium: UPSTACConsortium
+    Application:
+      <<: *ApplicationDefaults
+      Organizations:
+        - *hospitalA
+      Capabilities:
+        <<: *ApplicationCapabilities
+
+

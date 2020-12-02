@@ -1,0 +1,169 @@
+version: '2'
+
+services:
+
+  orderer.upstac.com:
+    container_name: orderer.upstac.com
+    image: hyperledger/fabric-orderer:1.4.3
+    environment:
+      - FABRIC_LOGGING_SPEC=INFO
+      - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
+      - ORDERER_GENERAL_GENESISMETHOD=file
+      - ORDERER_GENERAL_GENESISFILE=/var/hyperledger/orderer/orderer.genesis.block
+      - ORDERER_GENERAL_LOCALMSPID=OrdererMSP
+      - ORDERER_GENERAL_LOCALMSPDIR=/var/hyperledger/orderer/msp
+      # enable TLS
+      - ORDERER_GENERAL_TLS_ENABLED=true
+      - ORDERER_GENERAL_TLS_PRIVATEKEY=/var/hyperledger/orderer/tls/server.key
+      - ORDERER_GENERAL_TLS_CERTIFICATE=/var/hyperledger/orderer/tls/server.crt
+      - ORDERER_GENERAL_TLS_ROOTCAS=[/var/hyperledger/orderer/tls/ca.crt]
+      #- GODEBUG=netdns=go
+    working_dir: /opt/gopath/src/github.com/hyperledger/fabric
+    command: orderer
+    volumes:
+    - ../channel-artifacts/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
+    - ../crypto-config/ordererOrganizations/upstac.com/orderers/orderer.upstac.com/msp:/var/hyperledger/orderer/msp
+    - ../crypto-config/ordererOrganizations/upstac.com/orderers/orderer.upstac.com/tls/:/var/hyperledger/orderer/tls
+    - orderer.upstac.com:/var/hyperledger/production/orderer
+    ports:
+      - 7050:7050
+
+  peer0.hospitalA.upstac.com:
+    container_name: peer0.hospitalA.upstac.com
+    extends:
+      file: docker-compose-peer.yaml
+      service: peer-base
+    environment:
+      - CORE_PEER_ID=peer0.hospitalA.upstac.com
+      - CORE_PEER_ADDRESS=peer0.hospitalA.upstac.com:7051
+      - CORE_PEER_LISTENADDRESS=0.0.0.0:7051
+      - CORE_PEER_CHAINCODEADDRESS=peer0.hospitalA.upstac.com:7053
+      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7053
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.hospitalA.upstac.com:8051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.hospitalA.upstac.com:7051
+      - CORE_PEER_LOCALMSPID=hospitalAMSP
+    volumes:
+        - /var/run/:/host/var/run/
+        - ../crypto-config/peerOrganizations/hospitalA.upstac.com/peers/peer0.hospitalA.upstac.com/msp:/etc/hyperledger/fabric/msp
+        - ../crypto-config/peerOrganizations/hospitalA.upstac.com/peers/peer0.hospitalA.upstac.com/tls:/etc/hyperledger/fabric/tls
+        - peer0.hospitalA.upstac.com:/var/hyperledger/production
+    ports:
+      - 7051:7051
+      - 7053:7053
+
+  peer1.hospitalA.upstac.com:
+    container_name: peer1.hospitalA.upstac.com
+    extends:
+      file: docker-compose-peer.yaml
+      service: peer-base
+    environment:
+      - CORE_PEER_ID=peer1.hospitalA.upstac.com
+      - CORE_PEER_ADDRESS=peer1.hospitalA.upstac.com:8051
+      - CORE_PEER_LISTENADDRESS=0.0.0.0:8051
+      - CORE_PEER_CHAINCODEADDRESS=peer1.hospitalA.upstac.com:8053
+      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:8053
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.hospitalA.upstac.com:8051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.hospitalA.upstac.com:7051
+      - CORE_PEER_LOCALMSPID=hospitalAMSP
+    volumes:
+        - /var/run/:/host/var/run/
+        - ../crypto-config/peerOrganizations/hospitalA.upstac.com/peers/peer1.hospitalA.upstac.com/msp:/etc/hyperledger/fabric/msp
+        - ../crypto-config/peerOrganizations/hospitalA.upstac.com/peers/peer1.hospitalA.upstac.com/tls:/etc/hyperledger/fabric/tls
+        - peer1.hospitalA.upstac.com:/var/hyperledger/production
+
+    ports:
+      - 8051:8051
+      - 8053:8053
+
+  peer0.hospitalB.upstac.com:
+    container_name: peer0.hospitalB.upstac.com
+    extends:
+      file: docker-compose-peer.yaml
+      service: peer-base
+    environment:
+      - CORE_PEER_ID=peer0.hospitalB.upstac.com
+      - CORE_PEER_ADDRESS=peer0.hospitalB.upstac.com:9051
+      - CORE_PEER_LISTENADDRESS=0.0.0.0:9051
+      - CORE_PEER_CHAINCODEADDRESS=peer0.hospitalB.upstac.com:9053
+      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:9053
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.hospitalB.upstac.com:9051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.hospitalB.upstac.com:10051
+      - CORE_PEER_LOCALMSPID=hospitalBMSP
+    volumes:
+        - /var/run/:/host/var/run/
+        - ../crypto-config/peerOrganizations/hospitalB.upstac.com/peers/peer0.hospitalB.upstac.com/msp:/etc/hyperledger/fabric/msp
+        - ../crypto-config/peerOrganizations/hospitalB.upstac.com/peers/peer0.hospitalB.upstac.com/tls:/etc/hyperledger/fabric/tls
+        - peer0.hospitalB.upstac.com:/var/hyperledger/production
+    ports:
+      - 9051:9051
+      - 9053:9053
+
+  peer1.hospitalB.upstac.com:
+    container_name: peer1.hospitalB.upstac.com
+    extends:
+      file: docker-compose-peer.yaml
+      service: peer-base
+    environment:
+      - CORE_PEER_ID=peer1.hospitalB.upstac.com
+      - CORE_PEER_ADDRESS=peer1.hospitalB.upstac.com:10051
+      - CORE_PEER_LISTENADDRESS=0.0.0.0:10051
+      - CORE_PEER_CHAINCODEADDRESS=peer1.hospitalB.upstac.com:10053
+      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:10053
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.hospitalB.upstac.com:10051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.hospitalB.upstac.com:9051
+      - CORE_PEER_LOCALMSPID=hospitalBMSP
+    volumes:
+        - /var/run/:/host/var/run/
+        - ../crypto-config/peerOrganizations/hospitalB.upstac.com/peers/peer1.hospitalB.upstac.com/msp:/etc/hyperledger/fabric/msp
+        - ../crypto-config/peerOrganizations/hospitalB.upstac.com/peers/peer1.hospitalB.upstac.com/tls:/etc/hyperledger/fabric/tls
+        - peer1.hospitalB.upstac.com:/var/hyperledger/production
+    ports:
+      - 10051:10051
+      - 10053:10053
+
+  peer0.government.upstac.com:
+    container_name: peer0.government.upstac.com
+    extends:
+      file: docker-compose-peer.yaml
+      service: peer-base
+    environment:
+      - CORE_PEER_ID=peer0.government.upstac.com
+      - CORE_PEER_ADDRESS=peer0.government.upstac.com:11051
+      - CORE_PEER_LISTENADDRESS=0.0.0.0:11051
+      - CORE_PEER_CHAINCODEADDRESS=peer0.government.upstac.com:11053
+      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:11053
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.government.upstac.com:12051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.government.upstac.com:11051
+      - CORE_PEER_LOCALMSPID=governmentMSP
+    volumes:
+        - /var/run/:/host/var/run/
+        - ../crypto-config/peerOrganizations/government.upstac.com/peers/peer0.government.upstac.com/msp:/etc/hyperledger/fabric/msp
+        - ../crypto-config/peerOrganizations/government.upstac.com/peers/peer0.government.upstac.com/tls:/etc/hyperledger/fabric/tls
+        - peer0.government.upstac.com:/var/hyperledger/production
+    ports:
+      - 11051:11051
+      - 11053:11053
+
+  peer1.government.upstac.com:
+    container_name: peer1.government.upstac.com
+    extends:
+      file: docker-compose-peer.yaml
+      service: peer-base
+    environment:
+      - CORE_PEER_ID=peer1.government.upstac.com
+      - CORE_PEER_ADDRESS=peer1.government.upstac.com:12051
+      - CORE_PEER_LISTENADDRESS=0.0.0.0:12051
+      - CORE_PEER_CHAINCODEADDRESS=peer1.government.upstac.com:12053
+      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:12053
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.government.upstac.com:12051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.government.upstac.com:11051
+      - CORE_PEER_LOCALMSPID=governmentMSP
+    volumes:
+        - /var/run/:/host/var/run/
+        - ../crypto-config/peerOrganizations/government.upstac.com/peers/peer1.government.upstac.com/msp:/etc/hyperledger/fabric/msp
+        - ../crypto-config/peerOrganizations/government.upstac.com/peers/peer1.government.upstac.com/tls:/etc/hyperledger/fabric/tls
+        - peer1.government.upstac.com:/var/hyperledger/production
+
+    ports:
+      - 12051:12051
+      - 12053:12053
