@@ -1,0 +1,101 @@
+---
+#
+# The network connection profile provides client applications the information about the target
+# blockchain network that are necessary for the applications to interact with it. These are all
+# knowledge that must be acquired from out-of-band sources. This file provides such a source.
+#
+name: "network_upstac"
+
+x-type: "hlfv1"
+
+description: "UPSTAC Network"
+
+version: "1.0"
+
+client:
+  organization: government
+  connection:
+    timeout:
+      peer:
+        endorser: 300
+        eventHub: 300
+        eventReg: 300
+      orderer: 300
+
+channels:
+  common:
+    orderers:
+      - orderer.upstac.com
+    peers:
+      peer0.government.upstac.com:
+        endorsingPeer: true
+        chaincodeQuery: true
+        ledgerQuery: true
+        eventSource: true
+      peer1.government.upstac.com:
+        endorsingPeer: false
+        chaincodeQuery: false
+        ledgerQuery: true
+        eventSource: false 
+  insurance-government:
+    orderers:
+      - orderer.upstac.com
+    peers:
+      peer0.government.upstac.com:
+        endorsingPeer: true
+        chaincodeQuery: true
+        ledgerQuery: true
+        eventSource: true
+      peer1.government.upstac.com:
+        endorsingPeer: false
+        chaincodeQuery: false
+        ledgerQuery: true
+        eventSource: false           
+      
+organizations:
+  government:
+    mspid: governmentMSP
+    peers:
+      - peer0.government.upstac.com
+      - peer1.government.upstac.com
+    certificateAuthorities:
+      - ca.government.upstac.com
+
+  
+orderers:
+  orderer.upstac.com:
+    url: grpcs://localhost:7050
+    grpcOptions:
+      ssl-target-name-override: orderer.upstac.com
+    tlsCACerts:
+      path: ../network/crypto-config/ordererOrganizations/upstac.com/orderers/orderer.upstac.com/msp/tlscacerts/tlsca.upstac.com-cert.pem
+
+peers:
+  peer0.government.upstac.com:
+    url: grpcs://localhost:11051
+    grpcOptions:
+      ssl-target-name-override: peer0.government.upstac.com
+      request-timeout: 120001
+    tlsCACerts:
+      path: ../network/crypto-config/peerOrganizations/government.upstac.com/peers/peer0.government.upstac.com/msp/tlscacerts/tlsca.government.upstac.com-cert.pem
+  peer1.government.upstac.com:
+    url: grpcs://localhost:12051
+    grpcOptions:
+      ssl-target-name-override: peer1.government.upstac.com
+      request-timeout: 120001
+    tlsCACerts:
+      path: ../network/crypto-config/peerOrganizations/government.upstac.com/peers/peer1.government.upstac.com/msp/tlscacerts/tlsca.government.upstac.com-cert.pem
+  
+  
+certificateAuthorities:
+  ca.government.upstac.com:
+    url: https://localhost:9054
+    httpOptions:
+      verify: false
+    tlsCACerts:
+      path: ../network/crypto-config/peerOrganizations/government.upstac.com/ca/ca.government.upstac.com-cert.pem
+    registrar:
+      - enrollId: admin
+        enrollSecret: adminpw
+    caName: ca.government.upstac.com
+  

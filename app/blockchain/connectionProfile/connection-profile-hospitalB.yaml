@@ -1,0 +1,87 @@
+---
+#
+# The network connection profile provides client applications the information about the target
+# blockchain network that are necessary for the applications to interact with it. These are all
+# knowledge that must be acquired from out-of-band sources. This file provides such a source.
+#
+name: "network_upstac"
+
+x-type: "hlfv1"
+
+description: "UPSTAC Network"
+
+version: "1.0"
+
+client:
+  organization: hospitalB
+  connection:
+    timeout:
+      peer:
+        endorser: 300
+        eventHub: 300
+        eventReg: 300
+      orderer: 300
+
+channels:
+  common:
+    orderers:
+      - orderer.upstac.com
+    peers:
+      peer0.hospitalB.upstac.com:
+        endorsingPeer: true
+        chaincodeQuery: true
+        ledgerQuery: true
+        eventSource: true
+      peer1.hospitalB.upstac.com:
+        endorsingPeer: false
+        chaincodeQuery: false
+        ledgerQuery: true
+        eventSource: false 
+      
+organizations:
+  hospitalB:
+    mspid: hospitalBMSP
+    peers:
+      - peer0.hospitalB.upstac.com
+      - peer1.hospitalB.upstac.com
+    certificateAuthorities:
+      - ca.hospitalB.upstac.com
+
+  
+orderers:
+  orderer.upstac.com:
+    url: grpcs://localhost:7050
+    grpcOptions:
+      ssl-target-name-override: orderer.upstac.com
+    tlsCACerts:
+      path: ../network/crypto-config/ordererOrganizations/upstac.com/orderers/orderer.upstac.com/msp/tlscacerts/tlsca.upstac.com-cert.pem
+
+peers:
+  peer0.hospitalB.upstac.com:
+    url: grpcs://localhost:9051
+    grpcOptions:
+      ssl-target-name-override: peer0.hospitalB.upstac.com
+      request-timeout: 120001
+    tlsCACerts:
+      path: ../network/crypto-config/peerOrganizations/hospitalB.upstac.com/peers/peer0.hospitalB.upstac.com/msp/tlscacerts/tlsca.hospitalB.upstac.com-cert.pem
+  peer1.hospitalB.upstac.com:
+    url: grpcs://localhost:10051
+    grpcOptions:
+      ssl-target-name-override: peer1.hospitalB.upstac.com
+      request-timeout: 120001
+    tlsCACerts:
+      path: ../network/crypto-config/peerOrganizations/hospitalB.upstac.com/peers/peer1.hospitalB.upstac.com/msp/tlscacerts/tlsca.hospitalB.upstac.com-cert.pem
+  
+  
+certificateAuthorities:
+  ca.hospitalB.upstac.com:
+    url: https://localhost:8054
+    httpOptions:
+      verify: false
+    tlsCACerts:
+      path: ../network/crypto-config/peerOrganizations/hospitalB.upstac.com/ca/ca.hospitalB.upstac.com-cert.pem
+    registrar:
+      - enrollId: admin
+        enrollSecret: adminpw
+    caName: ca.hospitalB.upstac.com
+  

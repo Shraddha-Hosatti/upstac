@@ -22,11 +22,11 @@ services:
       - FABRIC_CA_SERVER_CA_NAME=ca.hospitalA.upstac.com
       - FABRIC_CA_SERVER_TLS_ENABLED=true
       - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.hospitalA.upstac.com-cert.pem
-      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/eccd69c5413df95f587b4534307716cb0a166cd7e5fca187171bdf88c850993b_sk
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/ea7396430c3dea1fb3f5fc5fc96813d3bfa0506f198dab6f7979966625e2c73e_sk
       - FABRIC_CA_SERVER_PORT=7054
     ports:
       - "7054:7054"
-    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.hospitalA.upstac.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/eccd69c5413df95f587b4534307716cb0a166cd7e5fca187171bdf88c850993b_sk -b admin:adminpw -d'
+    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.hospitalA.upstac.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/ea7396430c3dea1fb3f5fc5fc96813d3bfa0506f198dab6f7979966625e2c73e_sk -b admin:adminpw -d'
     volumes:
       - ./crypto-config/peerOrganizations/hospitalA.upstac.com/ca/:/etc/hyperledger/fabric-ca-server-config
     container_name: ca.hospitalA.upstac.com
@@ -40,11 +40,11 @@ services:
       - FABRIC_CA_SERVER_CA_NAME=ca.hospitalB.upstac.com
       - FABRIC_CA_SERVER_TLS_ENABLED=true
       - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.hospitalB.upstac.com-cert.pem
-      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/3798e16f5bb0195a1c8515b973d1343e3aa671fec75cfd90087dcd11ada9156e_sk
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/80041dd950c806ae463226dcd4189238aa7bf6581b137da7b5ef1b79b789d8c0_sk
       - FABRIC_CA_SERVER_PORT=8054
     ports:
       - "8054:8054"
-    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.hospitalB.upstac.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/3798e16f5bb0195a1c8515b973d1343e3aa671fec75cfd90087dcd11ada9156e_sk -b admin:adminpw -d'
+    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.hospitalB.upstac.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/80041dd950c806ae463226dcd4189238aa7bf6581b137da7b5ef1b79b789d8c0_sk -b admin:adminpw -d'
     volumes:
       - ./crypto-config/peerOrganizations/hospitalB.upstac.com/ca/:/etc/hyperledger/fabric-ca-server-config
     container_name: ca.hospitalB.upstac.com
@@ -58,11 +58,11 @@ services:
       - FABRIC_CA_SERVER_CA_NAME=ca.government.upstac.com
       - FABRIC_CA_SERVER_TLS_ENABLED=true
       - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.government.upstac.com-cert.pem
-      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/23477747f4cf0630a81497f7ca537938fd4a185c5e536d549d1a53cf0f6928e5_sk
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/0b25fa03087487273bcd7ea199cc411908e2b438484baa7d82025c50f3a8f01d_sk
       - FABRIC_CA_SERVER_PORT=9054
     ports:
       - "9054:9054"
-    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.government.upstac.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/23477747f4cf0630a81497f7ca537938fd4a185c5e536d549d1a53cf0f6928e5_sk -b admin:adminpw -d'
+    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.government.upstac.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/0b25fa03087487273bcd7ea199cc411908e2b438484baa7d82025c50f3a8f01d_sk -b admin:adminpw -d'
     volumes:
       - ./crypto-config/peerOrganizations/government.upstac.com/ca/:/etc/hyperledger/fabric-ca-server-config
     container_name: ca.government.upstac.com

@@ -2,10 +2,7 @@ network/crypto-config
 network/channel-artifacts
 network/insurance-artifacts/crypto-config
 network/insurance-artifacts/crypto-config
-app/hospitalA/identity
-app/hospitalB/identity
-app/government/identity
-app/insurance/identity
+app/blockchain/identity
 
 # These are some examples of commonly ignored file patterns.
 # You should customize this list as applicable to your project.

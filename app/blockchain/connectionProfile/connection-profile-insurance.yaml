@@ -1,0 +1,66 @@
+---
+#
+# The network connection profile provides client applications the information about the target
+# blockchain network that are necessary for the applications to interact with it. These are all
+# knowledge that must be acquired from out-of-band sources. This file provides such a source.
+#
+name: "network_upstac"
+
+x-type: "hlfv1"
+
+description: "UPSTAC Network"
+
+version: "1.0"
+
+client:
+  organization: insurance
+  connection:
+    timeout:
+      peer:
+        endorser: 300
+        eventHub: 300
+        eventReg: 300
+      orderer: 300
+
+channels:
+  common:
+    orderers:
+      - orderer.upstac.com
+    peers:
+      peer0.insurance.upstac.com:
+        endorsingPeer: true
+        chaincodeQuery: true
+        ledgerQuery: true
+        eventSource: true
+  insurance-hospitala:
+    orderers:
+      - orderer.upstac.com
+    peers:
+      peer0.insurance.upstac.com:
+        endorsingPeer: true
+        chaincodeQuery: true
+        ledgerQuery: true
+        eventSource: true
+           
+organizations:
+  insurance:
+    mspid: insuranceMSP
+    peers:
+      - peer0.insurance.upstac.com 
+  
+orderers:
+  orderer.upstac.com:
+    url: grpcs://localhost:7050
+    grpcOptions:
+      ssl-target-name-override: orderer.upstac.com
+    tlsCACerts:
+      path: ../network/insurance-artifacts/crypto-config/ordererOrganizations/upstac.com/orderers/orderer.upstac.com/msp/tlscacerts/tlsca.upstac.com-cert.pem
+
+peers:
+  peer0.insurance.upstac.com:
+    url: grpcs://localhost:21051
+    grpcOptions:
+      ssl-target-name-override: peer0.insurance.upstac.com
+      request-timeout: 120001
+    tlsCACerts:
+      path: ../network/insurance-artifacts/crypto-config/peerOrganizations/insurance.upstac.com/peers/peer0.insurance.upstac.com/msp/tlscacerts/tlsca.insurance.upstac.com-cert.pem
