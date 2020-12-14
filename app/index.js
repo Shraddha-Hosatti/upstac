@@ -22,6 +22,7 @@ const getAllUsersData = require("./utils/getAllUsersData")
 const registerUser = require("./utils/registerUser")
 const registerAdmin = require("./utils/registerAdmin")
 const revokeUser = require("./utils/revokeUser")
+const getTransactionById = require("./utils/getTransactionById")
 
 // Define Express app settings
 app.use(cors());
@@ -674,6 +675,46 @@ app.post('/:org/getAllTestData',async (req, res) => {
         res.status(500).send(result);
     }
 
+});
+
+// Query Get Transaction by Transaction ID
+app.post('/:org/getTransactionById', async function(req, res) {
+    
+    try {
+
+        // Reference
+        var result
+        let data
+        let txId
+        let channelName
+        let chainCodeName
+
+        // Parse Request
+        fabricUserName = req.body.fabricUserName
+        channelName = req.body.channelName
+        smartContractName = req.body.smartContractName
+        org = req.params.org
+        txId = req.body.txId;
+    
+        // Get Data
+        data = await getTransactionById.execute(org, fabricUserName, channelName, txId);
+        
+        // Send Response
+        result = {
+            success: true,
+            data: data
+        };
+        res.json(result);
+        
+    } catch (error) {
+        result = {
+            success: false,
+            error: error.message
+        };
+        res.status(500).send(result);
+    }
+    
+   
 });
 
 app.listen(port, () => console.log(`Distributed App listening on port ${port}!`));

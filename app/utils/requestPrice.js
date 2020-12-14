@@ -15,12 +15,17 @@ async function main(org, fabricUserName, channelName, chainCodeName, smartContra
 
 		// Submit Transaction
 		console.log('.....Requesting to transaction on the Network');
-		dataBuffer = await objContract.submitTransaction('requestPrice', testId);
+		let txObject = await objContract.createTransaction('requestPrice')
+		let txId = txObject.getTransactionID()
+		dataBuffer = await txObject.submit(testId);
 
 		// process response
 		console.log('.....Processing Request New User Transaction Response \n\n');
 		data = JSON.parse(dataBuffer.toString());
 		console.log('\n\n.....Request New User Transaction Complete!');
+
+		// Add Tx to reponse
+		data["txId"] = txId._transaction_id
 
 		// Response
 		return data;

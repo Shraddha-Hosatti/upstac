@@ -8,18 +8,24 @@ async function main(org, fabricUserName, channelName, chainCodeName, smartContra
 		// Reference
 		let objContract		
 		let data
+		let dataBuffer
 
 		// Create contract Instance
 		objContract = await helper.getContractInstance(org, fabricUserName, channelName, chainCodeName, smartContractName);
 
 		// Submit Transaction
 		console.log('.....View data on the Network');
-		data = await objContract.submitTransaction('approvePriceRequest', testId, price);
+		let txObject = await objContract.createTransaction('approvePriceRequest')
+		let txId = txObject.getTransactionID()
+		dataBuffer = await txObject.submit(testId, price);
 
 		// Process response
 		console.log('.....Processing Transaction  \n\n');
-		data = JSON.parse(data.toString());
+		data = JSON.parse(dataBuffer.toString());
 		console.log('\n\n.....Processing Complete!');
+
+		// Add Tx to reponse
+		data["txId"] = txId._transaction_id
 
 		// Response
 		return data;

@@ -45,5 +45,39 @@ function disconnect() {
 	gateway.disconnect();
 }
 
+
+async function getChannel(org, fabricUserName, channelName) {
+	
+	// A gateway defines which peer is used to access Fabric network
+	// It uses a common connection profile (CCP) to connect to a Fabric Peer
+	// A CCP is defined manually in file connection-profile-iit.yaml
+	gateway = new Gateway();
+	
+	// A wallet is where the credentials to be used for this transaction exist
+	const wallet = new FileSystemWallet(getIdentityPath(org));
+	
+	// Load connection profile; will be used to locate a gateway; The CCP is converted from YAML to JSON.
+	let connectionProfile = yaml.safeLoad(fs.readFileSync(getConnectionProfilePath(org), 'utf8'));
+	
+	// Set connection options; identity and wallet
+	let connectionOptions = {
+		wallet: wallet,
+		identity: fabricUserName,
+		discovery: { enabled: false, asLocalhost: true }
+	};
+	
+	// Connect to gateway using specified parameters
+	console.log('.....Connecting to Fabric Gateway');
+	await gateway.connect(connectionProfile, connectionOptions);
+	
+	// Access channel
+	console.log('.....Connecting to channel - common');
+	const client = await gateway.getClient();
+	const channel = await client.getChannel(channelName)
+	
+	return channel
+}
+
 module.exports.getContractInstance = getContractInstance;
 module.exports.disconnect = disconnect;
+module.exports.getChannel = getChannel;

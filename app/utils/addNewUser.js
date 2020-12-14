@@ -12,15 +12,21 @@ async function main(org, fabricUserName, channelName, chainCodeName, smartContra
 
 		// Create contract Instance
 		objContract = await helper.getContractInstance(org, fabricUserName, channelName, chainCodeName, smartContractName);
-
+		
 		// Submit Transaction
 		console.log('.....Requesting to transaction on the Network');
-		newUserBuffer = await objContract.submitTransaction('addNewUser', role, firstName, lastName, gender, dob, phone, email, address, pinCode);
-
+		let txObject = await objContract.createTransaction('addNewUser')
+		let txId = txObject.getTransactionID()
+		newUserBuffer = await txObject.submit(role, firstName, lastName, gender, dob, phone, email, address, pinCode);
+		
 		// process response
 		console.log('.....Processing Request New User Transaction Response \n\n');
+		console.log(newUserBuffer.toString())
 		newUser = JSON.parse(newUserBuffer.toString());
 		console.log('\n\n.....Request New User Transaction Complete!');
+
+		// Add Tx to reponse
+		newUser["txId"] = txId._transaction_id
 
 		// Response
 		return newUser;
