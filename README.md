@@ -119,11 +119,15 @@ This will create artifacts and run docker images for HospitalA, HospitalB and Go
 
 `./network.sh down`
 
+Important : Use this command in order to shut down the network and restart it, directly deleting dockers can cause issues.
+
 ### Stop Insurance
 
 This will create artifacts and run docker images for HospitalA, HospitalB and Government
 
 `./insurance-network.sh down`
+
+Important : Use this command in order to shut down the network and restart it, directly deleting dockers can cause issues.
 
 ### Update chaincode common (Optional)
 
@@ -190,9 +194,9 @@ Import below URL in Postman (Go to Import -> Import from Link)
 
 https://www.getpostman.com/collections/4304b0968443e983454e
 
-#### Go to specific Organization folder in app folder
+#### APIs are in app folder
 
-`cd app/hospitalA`
+`cd app`
 
 #### Install dependency
 
@@ -201,6 +205,10 @@ https://www.getpostman.com/collections/4304b0968443e983454e
 #### Run Project
 
 `node index.js`
+
+#### Connection Profiles
+
+Connection Profile is required to do transaction on blockchain via different peers. These files are present in app/blockchain/connectionProfile folder for each organization.
 
 #### Register Fabric Admin to CA
 
@@ -216,7 +224,9 @@ API : <BaseURL>/<org>/registerAdmin
 API : <BaseURL>/<org>/registerUser
 ```
 
-Users Credentails can found in "identity" folder inside the org app
+Users Credentails can found in "identity" folder inside the app/blockchain/identity/<org>
+
+Important : Delete this folder while restarting the network.
 
 #### Add Existing Fabric User(User1) to Wallet 
 
@@ -270,7 +280,9 @@ Go inside any peer using above command
 
 #### Stop / remove all of Docker containers:
 
-Sometimes docker cache previous images, below commands can be used to clear everything from docker. Use them as per your current system since it can remove all images.
+Sometimes docker cache previous images, below commands can be used to clear everything from docker. 
+
+Use them as per your current system since it can remove all images.
 
 ```
 docker volume prune -f
